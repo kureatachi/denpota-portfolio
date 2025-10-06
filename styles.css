@@ -194,8 +194,7 @@ body {
 
 .title-line:nth-child(2) {
     animation-delay: 0.2s;
-    color: #00f5ff;
-    text-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
+    color: #2d3748;
 }
 
 @keyframes slideInLeft {
@@ -215,7 +214,9 @@ body {
     margin-bottom: 1.5rem;
     font-weight: 500;
     color: #718096;
-    min-height: 1.5rem; /* Reserve space to prevent layout shift */
+    height: 2rem; /* Fixed height to prevent layout shift */
+    display: flex;
+    align-items: center;
 }
 
 .typing-text {

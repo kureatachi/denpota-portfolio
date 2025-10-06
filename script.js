@@ -7,9 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typingElement && cursor && subtitleContainer) {
         const text = "ソフトウェア開発者 × マーケティングディレクター × デジタルアーティスト";
         
-        // Set a fixed height to prevent layout shift
-        subtitleContainer.style.minHeight = '2.5rem';
-        
         let index = 0;
         
         function typeText() {
