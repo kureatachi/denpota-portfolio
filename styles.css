@@ -12,7 +12,7 @@ html {
 body {
     font-family: 'Inter', 'Noto Sans JP', sans-serif;
     line-height: 1.6;
-    color: #1f2937;
+    color: #2d3748;
     background: #ffffff;
     overflow-x: hidden;
 }
@@ -47,7 +47,7 @@ body {
 }
 
 .nav-logo h2 {
-    color: #1f2937;
+    color: #2d3748;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
@@ -61,14 +61,14 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: #6b7280;
+    color: #718096;
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
 }
 
 .nav-link:hover {
-    color: #1f2937;
+    color: #2d3748;
 }
 
 .nav-link::after {
@@ -78,7 +78,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: #3b82f6;
+    background: #4299e1;
     transition: width 0.3s ease;
 }
 
@@ -107,7 +107,7 @@ body {
     align-items: center;
     position: relative;
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    color: #1f2937;
+    color: #2d3748;
     overflow: hidden;
 }
 
@@ -119,8 +119,8 @@ body {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.02) 0%, transparent 50%);
+            radial-gradient(circle at 20% 50%, rgba(66, 153, 225, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(113, 128, 150, 0.02) 0%, transparent 50%);
     z-index: 1;
 }
 
@@ -141,7 +141,7 @@ body {
 
 .particle {
     position: absolute;
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(66, 153, 225, 0.1);
     border-radius: 50%;
     animation: float 6s ease-in-out infinite;
 }
@@ -170,7 +170,7 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.1;
     letter-spacing: -0.025em;
-    color: #1f2937;
+    color: #2d3748;
 }
 
 /* Japanese Text Styling */
@@ -184,7 +184,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     letter-spacing: -0.025em;
-    color: #3b82f6;
+    color: #4299e1;
 }
 
 .title-line {
@@ -214,11 +214,11 @@ body {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
-    color: #6b7280;
+    color: #718096;
 }
 
 .typing-text {
-    color: #3b82f6;
+    color: #4299e1;
     font-weight: 600;
 }
 
@@ -259,13 +259,13 @@ body {
 .japanese-subtitle {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 500;
-    color: #6b7280;
+    color: #718096;
 }
 
 .japanese-heading {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 700;
-    color: #1f2937;
+    color: #2d3748;
 }
 
 .hero-description {
@@ -301,29 +301,29 @@ body {
 }
 
 .btn-primary {
-    background: #3b82f6;
+    background: #4299e1;
     color: white;
     border: none;
-    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.25);
+    box-shadow: 0 4px 14px 0 rgba(66, 153, 225, 0.25);
 }
 
 .btn-primary:hover {
-    background: #2563eb;
+    background: #3182ce;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+    box-shadow: 0 6px 20px rgba(66, 153, 225, 0.35);
 }
 
 .btn-secondary {
     background: transparent;
-    color: #3b82f6;
-    border: 2px solid #3b82f6;
+    color: #4299e1;
+    border: 2px solid #4299e1;
 }
 
 .btn-secondary:hover {
-    background: #3b82f6;
+    background: #4299e1;
     color: white;
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.25);
+    box-shadow: 0 4px 14px 0 rgba(66, 153, 225, 0.25);
 }
 
 .hero-image {
@@ -362,14 +362,14 @@ body {
 .avatar {
     width: 60px;
     height: 60px;
-    background: #3b82f6;
+    background: #4299e1;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     color: white;
-    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.25);
+    box-shadow: 0 4px 14px 0 rgba(66, 153, 225, 0.25);
 }
 
 .status-indicator {
@@ -390,11 +390,11 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #1f2937;
+    color: #2d3748;
 }
 
 .card-body p {
-    color: #3b82f6;
+    color: #4299e1;
     margin-bottom: 1rem;
     font-weight: 500;
 }
@@ -407,22 +407,22 @@ body {
 .social-link {
     width: 40px;
     height: 40px;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(66, 153, 225, 0.1);
+    border: 1px solid rgba(66, 153, 225, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #3b82f6;
+    color: #4299e1;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
-    background: #3b82f6;
+    background: #4299e1;
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.25);
+    box-shadow: 0 4px 14px 0 rgba(66, 153, 225, 0.25);
 }
 
 .scroll-indicator {
@@ -459,14 +459,14 @@ section {
     font-family: 'Inter', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 1rem;
     letter-spacing: -0.025em;
 }
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: #6b7280;
+    color: #718096;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -486,14 +486,14 @@ section {
 .about-text h3 {
     font-family: 'Inter', sans-serif;
     font-size: 1.8rem;
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
 .about-text p {
     font-size: 1.1rem;
-    color: #6b7280;
+    color: #718096;
     margin-bottom: 2rem;
     line-height: 1.8;
 }
@@ -507,7 +507,7 @@ section {
 }
 
 .education-section h4 {
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 1rem;
     font-size: 1.1rem;
     display: flex;
@@ -537,7 +537,7 @@ section {
 }
 
 .education-list li strong {
-    color: #1f2937;
+    color: #2d3748;
     font-weight: 600;
     margin-right: 0.5rem;
 }
@@ -560,7 +560,7 @@ section {
 
 .stat-label {
     font-size: 0.9rem;
-    color: #6b7280;
+    color: #718096;
     margin-top: 0.5rem;
 }
 
@@ -581,14 +581,14 @@ section {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 1.5rem;
     line-height: 1.3;
 }
 
 .intro-text p {
     font-size: 1.1rem;
-    color: #6b7280;
+    color: #718096;
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
@@ -623,15 +623,15 @@ section {
 }
 
 .visual-item:hover {
-    background: #3b82f6;
+    background: #4299e1;
     color: white;
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+    box-shadow: 0 10px 25px rgba(66, 153, 225, 0.25);
 }
 
 .visual-item i {
     font-size: 2rem;
-    color: #3b82f6;
+    color: #4299e1;
     transition: color 0.3s ease;
 }
 
@@ -643,7 +643,7 @@ section {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 500;
     font-size: 0.9rem;
-    color: #6b7280;
+    color: #718096;
     transition: color 0.3s ease;
 }
 
@@ -670,7 +670,7 @@ section {
 }
 
 .skill-category h4 {
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -724,7 +724,7 @@ section {
     top: 0;
     width: 16px;
     height: 16px;
-    background: #2563eb;
+    background: #3182ce;
     border-radius: 50%;
     border: 4px solid white;
     box-shadow: 0 0 0 4px #e5e7eb;
@@ -758,12 +758,12 @@ section {
 }
 
 .timeline-header h3 {
-    color: #1f2937;
+    color: #2d3748;
     font-size: 1.3rem;
 }
 
 .timeline-date {
-    background: #2563eb;
+    background: #3182ce;
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -785,7 +785,7 @@ section {
     position: relative;
     padding-left: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #6b7280;
+    color: #718096;
 }
 
 .timeline-body li::before {
@@ -811,13 +811,13 @@ section {
 }
 
 .project-card h5 {
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 0.5rem;
 }
 
 .project-card p {
     font-size: 0.9rem;
-    color: #6b7280;
+    color: #718096;
 }
 
 /* Skills Section within About */
@@ -873,7 +873,7 @@ section {
 }
 
 .skill-card h3 {
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
@@ -1022,14 +1022,14 @@ section {
 .project-content h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 0.75rem;
     line-height: 1.3;
 }
 
 .project-content p {
     font-size: 0.95rem;
-    color: #6b7280;
+    color: #718096;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -1048,13 +1048,13 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #6b7280;
+    color: #718096;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .project-icon:hover {
-    background: #3b82f6;
+    background: #4299e1;
     color: white;
     transform: translateY(-2px);
 }
@@ -1082,7 +1082,7 @@ section {
 }
 
 .work-header h3 {
-    color: #1f2937;
+    color: #2d3748;
     font-size: 1.8rem;
     font-weight: 600;
 }
@@ -1097,7 +1097,7 @@ section {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: #2563eb;
+    background: #3182ce;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -1118,13 +1118,13 @@ section {
 }
 
 .work-description p {
-    color: #6b7280;
+    color: #718096;
     line-height: 1.8;
     margin-bottom: 1rem;
 }
 
 .work-tech h4 {
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
@@ -1165,7 +1165,7 @@ section {
 
 .work-stats .stat-label {
     font-size: 0.9rem;
-    color: #6b7280;
+    color: #718096;
     margin-top: 0.5rem;
 }
 
@@ -1205,7 +1205,7 @@ section {
 }
 
 .skill-category h3 {
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 2rem;
     font-size: 1.3rem;
     display: flex;
@@ -1241,7 +1241,7 @@ section {
 .skill-name {
     min-width: 120px;
     font-weight: 600;
-    color: #1f2937;
+    color: #2d3748;
 }
 
 .skill-level {
@@ -1270,7 +1270,7 @@ section {
 .level-text {
     min-width: 120px;
     font-size: 0.9rem;
-    color: #6b7280;
+    color: #718096;
     text-align: right;
 }
 
@@ -1319,7 +1319,7 @@ section {
     top: 1rem;
     width: 16px;
     height: 16px;
-    background: #2563eb;
+    background: #3182ce;
     border-radius: 50%;
     border: 4px solid white;
     box-shadow: 0 0 0 4px #e5e7eb;
@@ -1358,13 +1358,13 @@ section {
 }
 
 .story-content h3 {
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
 
 .story-content p {
-    color: #6b7280;
+    color: #718096;
     line-height: 1.8;
 }
 
@@ -1378,7 +1378,7 @@ section {
 }
 
 .story-reflection h3 {
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 2rem;
     font-size: 1.5rem;
     text-align: center;
@@ -1453,7 +1453,7 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
 }
 
 .form-group textarea {
@@ -1487,7 +1487,7 @@ section {
 .contact-icon {
     width: 50px;
     height: 50px;
-    background: #3b82f6;
+    background: #4299e1;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1497,13 +1497,13 @@ section {
 }
 
 .contact-details h4 {
-    color: #1f2937;
+    color: #2d3748;
     margin-bottom: 0.25rem;
     font-weight: 600;
 }
 
 .contact-details p {
-    color: #6b7280;
+    color: #718096;
     font-size: 0.9rem;
 }
 
@@ -1539,7 +1539,7 @@ section {
 }
 
 .footer .social-link:hover {
-    background: #2563eb;
+    background: #3182ce;
     transform: translateY(-2px);
 }
 
