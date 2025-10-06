@@ -215,6 +215,7 @@ body {
     margin-bottom: 1.5rem;
     font-weight: 500;
     color: #718096;
+    min-height: 1.5rem; /* Reserve space to prevent layout shift */
 }
 
 .typing-text {

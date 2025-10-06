@@ -2,16 +2,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     const typingElement = document.getElementById('typing-text');
     const cursor = document.querySelector('.cursor');
+    const subtitleContainer = document.querySelector('.hero-subtitle');
     
-    if (typingElement && cursor) {
+    if (typingElement && cursor && subtitleContainer) {
         const text = "ソフトウェア開発者 × マーケティングディレクター × デジタルアーティスト";
+        
+        // Set a fixed height to prevent layout shift
+        subtitleContainer.style.minHeight = '2.5rem';
+        
         let index = 0;
         
         function typeText() {
             if (index < text.length) {
                 typingElement.textContent += text.charAt(index);
                 index++;
-                setTimeout(typeText, 100); // Adjust speed here (100ms per character)
+                setTimeout(typeText, 80); // Slightly faster typing speed
             } else {
                 // Animation complete, keep cursor blinking
                 cursor.style.animation = 'blink 1s infinite';
@@ -19,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Start typing animation after a short delay
-        setTimeout(typeText, 1000);
+        setTimeout(typeText, 1500);
     }
 });
 
