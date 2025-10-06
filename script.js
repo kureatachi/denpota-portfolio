@@ -7,15 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typingElement && cursor && subtitleContainer) {
         const text = "ソフトウェア開発者 × マーケティングディレクター × デジタルアーティスト";
         
+        // Set a fixed height to prevent any layout shift
+        subtitleContainer.style.height = '4.5rem';
+        subtitleContainer.style.overflow = 'hidden';
+        
+        // Pre-fill with invisible characters to reserve space
+        typingElement.textContent = text.replace(/./g, ' ');
+        
         let index = 0;
         
         function typeText() {
             if (index < text.length) {
-                typingElement.textContent += text.charAt(index);
+                const newText = text.substring(0, index + 1) + text.substring(index + 1).replace(/./g, ' ');
+                typingElement.textContent = newText;
                 index++;
-                setTimeout(typeText, 80); // Slightly faster typing speed
+                setTimeout(typeText, 80);
             } else {
-                // Animation complete, keep cursor blinking
+                // Animation complete, show final text and keep cursor blinking
+                typingElement.textContent = text;
                 cursor.style.animation = 'blink 1s infinite';
             }
         }

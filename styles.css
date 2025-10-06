@@ -161,6 +161,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
+    min-height: 400px; /* Ensure stable container height */
 }
 
 .hero-title {
@@ -214,9 +215,11 @@ body {
     margin-bottom: 1.5rem;
     font-weight: 500;
     color: #718096;
-    height: 2rem; /* Fixed height to prevent layout shift */
+    height: 4.5rem; /* Fixed height to prevent any layout shift */
     display: flex;
     align-items: center;
+    line-height: 1.4;
+    overflow: hidden; /* Hide any overflow during animation */
 }
 
 .typing-text {
@@ -281,6 +284,8 @@ body {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-top: 2rem;
+    min-height: 3.5rem; /* Ensure stable height for buttons */
 }
 
 .btn {
@@ -478,11 +483,20 @@ section {
     background: #f8fafc;
 }
 
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+.about-intro {
+    margin-bottom: 3rem;
+}
+
+.intro-paragraphs {
+    margin-top: 2rem;
+}
+
+.intro-paragraphs p {
+    margin-bottom: 1.5rem;
+}
+
+.intro-paragraphs p:last-child {
+    margin-bottom: 0;
 }
 
 .about-text h3 {
@@ -501,11 +515,19 @@ section {
 }
 
 .education-section {
-    background: #f8fafc;
-    padding: 1.5rem;
+    background: #ffffff;
+    padding: 2rem;
     border-radius: 12px;
-    margin: 2rem 0;
-    border-left: 4px solid #2563eb;
+    margin: 3rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #4299e1;
+    transition: all 0.3s ease;
+}
+
+.education-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .education-section h4 {
@@ -518,7 +540,7 @@ section {
 }
 
 .education-section h4 i {
-    color: #2563eb;
+    color: #4299e1;
 }
 
 .education-list {
@@ -806,20 +828,31 @@ section {
 }
 
 .project-card {
-    background: #f9fafb;
-    padding: 1rem;
-    border-radius: 8px;
-    border-left: 4px solid #2563eb;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
 }
 
-.project-card h5 {
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
     color: #2d3748;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .project-card p {
     font-size: 0.9rem;
     color: #718096;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 /* Skills Section within About */
@@ -827,6 +860,61 @@ section {
     margin-top: 4rem;
     padding-top: 3rem;
     border-top: 1px solid #e5e7eb;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skills-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.skills-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.skills-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif;
+    border-bottom: 2px solid #4299e1;
+    padding-bottom: 0.5rem;
+}
+
+.professional-domains {
+    list-style: none;
+    padding: 0;
+}
+
+.professional-domains li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.professional-domains li:before {
+    content: "•";
+    color: #4299e1;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.professional-domains li:last-child {
+    border-bottom: none;
 }
 
 .career-section {
@@ -926,6 +1014,8 @@ section {
     height: 200px;
     background: #f8fafc;
     overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
 }
 
 .project-screenshot {
@@ -1043,22 +1133,24 @@ section {
 }
 
 .project-icon {
-    width: 32px;
-    height: 32px;
-    background: #f3f4f6;
-    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    background: #f8fafc;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #718096;
     text-decoration: none;
     transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
 }
 
 .project-icon:hover {
-    background: #4299e1;
-    color: white;
-    transform: translateY(-2px);
+    background: #f1f5f9;
+    color: #2d3748;
+    transform: translateY(-1px);
+    border-color: #cbd5e1;
 }
 .work-item {
     background: white;
@@ -1594,9 +1686,13 @@ section {
         justify-content: center;
     }
 
-    .about-content {
+    .skills-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
+    }
+    
+    .skills-card {
+        padding: 1.5rem;
     }
 
     .about-stats {
