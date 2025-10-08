@@ -304,3 +304,49 @@ function closeModal(modalId) {
         }
     }
 }
+
+// Art Carousel functionality (for About page)
+let currentArtSlide = 0;
+
+function moveArtCarousel(direction) {
+    const slides = document.querySelectorAll('.art-carousel-slide');
+    const dots = document.querySelectorAll('.art-dot');
+    
+    if (slides.length === 0) return;
+    
+    // Remove active class from current
+    slides[currentArtSlide].classList.remove('active');
+    dots[currentArtSlide].classList.remove('active');
+    
+    // Calculate new index
+    currentArtSlide += direction;
+    
+    // Wrap around
+    if (currentArtSlide >= slides.length) {
+        currentArtSlide = 0;
+    } else if (currentArtSlide < 0) {
+        currentArtSlide = slides.length - 1;
+    }
+    
+    // Add active class to new
+    slides[currentArtSlide].classList.add('active');
+    dots[currentArtSlide].classList.add('active');
+}
+
+function goToArtSlide(index) {
+    const slides = document.querySelectorAll('.art-carousel-slide');
+    const dots = document.querySelectorAll('.art-dot');
+    
+    if (slides.length === 0) return;
+    
+    // Remove active class from current
+    slides[currentArtSlide].classList.remove('active');
+    dots[currentArtSlide].classList.remove('active');
+    
+    // Set new index
+    currentArtSlide = index;
+    
+    // Add active class to new
+    slides[currentArtSlide].classList.add('active');
+    dots[currentArtSlide].classList.add('active');
+}
