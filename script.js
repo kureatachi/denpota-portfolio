@@ -125,13 +125,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-// Close flipped cards when clicking outside
-document.addEventListener('click', function(e) {
-    if (!e.target.closest('.flip-card')) {
-        flipCards.forEach(card => {
-            card.classList.remove('flipped');
-        });
-    }
+    // Close flipped cards when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.flip-card')) {
+            flipCards.forEach(card => {
+                card.classList.remove('flipped');
+            });
+        }
+    });
 });
 
 // Profile image upload functionality
@@ -163,6 +164,37 @@ if (profileImageContainer) {
         document.body.removeChild(input);
     });
 }
+
+// Modal functionality
+function openModal(modalId) {
+    console.log('Opening modal:', modalId);
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        console.log('Modal opened successfully');
+    } else {
+        console.error('Modal not found:', modalId);
+    }
+}
+
+// Close modal when clicking outside of it
+window.addEventListener('click', function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const openModals = document.querySelectorAll('.modal[style*="block"]');
+        openModals.forEach(modal => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
 });
 
 // Contact form handling
@@ -193,3 +225,82 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Carousel functionality
+let currentSlideIndex = {};
+
+function moveCarousel(modalId, direction) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+    
+    const slides = modal.querySelectorAll('.carousel-slide');
+    const dots = modal.querySelectorAll('.dot');
+    
+    if (!currentSlideIndex[modalId]) {
+        currentSlideIndex[modalId] = 0;
+    }
+    
+    // Remove active class from current slide and dot
+    slides[currentSlideIndex[modalId]].classList.remove('active');
+    dots[currentSlideIndex[modalId]].classList.remove('active');
+    
+    // Calculate new index
+    currentSlideIndex[modalId] += direction;
+    
+    // Wrap around
+    if (currentSlideIndex[modalId] >= slides.length) {
+        currentSlideIndex[modalId] = 0;
+    } else if (currentSlideIndex[modalId] < 0) {
+        currentSlideIndex[modalId] = slides.length - 1;
+    }
+    
+    // Add active class to new slide and dot
+    slides[currentSlideIndex[modalId]].classList.add('active');
+    dots[currentSlideIndex[modalId]].classList.add('active');
+}
+
+function currentSlide(modalId, index) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+    
+    const slides = modal.querySelectorAll('.carousel-slide');
+    const dots = modal.querySelectorAll('.dot');
+    
+    if (!currentSlideIndex[modalId]) {
+        currentSlideIndex[modalId] = 0;
+    }
+    
+    // Remove active class from current slide and dot
+    slides[currentSlideIndex[modalId]].classList.remove('active');
+    dots[currentSlideIndex[modalId]].classList.remove('active');
+    
+    // Set new index
+    currentSlideIndex[modalId] = index;
+    
+    // Add active class to new slide and dot
+    slides[currentSlideIndex[modalId]].classList.add('active');
+    dots[currentSlideIndex[modalId]].classList.add('active');
+}
+
+// Reset carousel when modal closes
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        
+        // Reset carousel to first slide
+        if (currentSlideIndex[modalId] !== undefined) {
+            const slides = modal.querySelectorAll('.carousel-slide');
+            const dots = modal.querySelectorAll('.dot');
+            
+            slides[currentSlideIndex[modalId]].classList.remove('active');
+            dots[currentSlideIndex[modalId]].classList.remove('active');
+            
+            currentSlideIndex[modalId] = 0;
+            
+            slides[0].classList.add('active');
+            dots[0].classList.add('active');
+        }
+    }
+}

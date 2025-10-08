@@ -182,78 +182,57 @@
     <section id="work" class="work">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Works</h2>
-                <p class="section-subtitle japanese-subtitle">作品・プロジェクト</p>
+                <h2 class="section-title">Works</h2>
+                <p class="section-subtitle japanese-subtitle">プロジェクト</p>
             </div>
             
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/sugar-crm-dashboard.jpg" alt="Sugar CRM Dashboard">
+            <div class="works-grid">
+                <!-- Project 1: AI Outreach Engine -->
+                <div class="work-item" onclick="openModal('modal1')">
+                    <div class="work-image">
+                        <img src="images/sugar-crm-dashboard.jpg" alt="AI Outreach Engine">
                     </div>
-                    <div class="project-content">
-                        <div class="project-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="project-title">Sugar CRM</h3>
-                        <p class="project-description">
-                            Customer Journey Dashboard
-                        </p>
-                        <p class="project-details">
-                            Sugar CRM delivers a comprehensive dashboard that empowers businesses to visualize customer journeys, track leads, and automate workflows. With rich data analytics and a highly intuitive UX, it supports efficient and scalable CRM strategies.
-                        </p>
-                        <div class="project-actions">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
+                    <div class="work-title">AI Outreach Engine</div>
+                            </div>
+
+                <!-- Project 2: Freshh -->
+                <div class="work-item" onclick="openModal('modal2')">
+                    <div class="work-image">
+                        <img src="images/velobank-landing.jpg" alt="Freshh Dashboard">
                     </div>
+                    <div class="work-title">Freshh</div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/velobank-landing.jpg" alt="Velobank Landing Page">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-icon">
-                            <i class="fas fa-credit-card"></i>
-                        </div>
-                        <h3 class="project-title">Velobank</h3>
-                        <p class="project-description">
-                            Digital Neo Bank Card Landing Page
-                        </p>
-                        <p class="project-details">
-                            Velobank is a landing page website concept created for a digital neo-banking app. The project explores a modern visual approach, placing emphasis on clean design, simple onboarding, and brand trust for tech-savvy users.
-                        </p>
-                        <div class="project-actions">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
+                <!-- Project 3: InterviewX -->
+                <div class="work-item" onclick="openModal('modal3')">
+                    <div class="work-image">
                         <img src="images/interviewx-platform.jpg" alt="InterviewX Platform">
                     </div>
-                    <div class="project-content">
-                        <div class="project-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h3 class="project-title">InterviewX</h3>
-                        <p class="project-description">
-                            AI-Based Business Model Consulting
-                        </p>
-                        <p class="project-details">
-                            InterviewX helps startup leaders establish strategic clarity through AI. It uses data-driven persona modeling and business verification to provide tailored insights, empowering better decisions and supporting rapid growth across industries.
-                        </p>
-                        <div class="project-actions">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
+                    <div class="work-title">InterviewX</div>
+                            </div>
+
+                <!-- Project 4: InsightHub -->
+                <div class="work-item" onclick="openModal('modal4')">
+                    <div class="work-image">
+                        <img src="images/sugar-crm-dashboard.jpg" alt="InsightHub Dashboard">
                     </div>
+                    <div class="work-title">InsightHub</div>
+                </div>
+
+                <!-- Project 5: OEM Corporate CMS -->
+                <div class="work-item" onclick="openModal('modal5')">
+                    <div class="work-image">
+                        <img src="images/velobank-landing.jpg" alt="OEM Corporate CMS">
+                    </div>
+                    <div class="work-title">OEM Corporate CMS</div>
+                            </div>
+
+                <!-- Project 6: Additional Project -->
+                <div class="work-item" onclick="openModal('modal6')">
+                    <div class="work-image">
+                        <img src="images/interviewx-platform.jpg" alt="Project 6">
+                    </div>
+                    <div class="work-title">Project 6</div>
                 </div>
             </div>
         </div>
@@ -358,6 +337,356 @@
             </div>
         </div>
     </section>
+
+    <!-- Project Modals -->
+    <!-- Modal 1: AI Outreach Engine -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>AI Outreach Engine</h2>
+            <p class="project-subtitle">B2B営業自動化SaaS</p>
+            <div class="modal-body">
+                <!-- Left Column: Text Content -->
+                <div class="modal-body-left">
+                    <!-- Description -->
+                    <div class="project-description">
+                        <p>日本市場に進出する海外スタートアップ向けに、営業メールの自動生成・送信・分析を一括で行うSaaSを開発。リード獲得を自動化し、マーケティング・セールスの生産性を大幅に向上させることを目的とした。</p>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div class="project-results-section">
+                        <h3 class="results-heading">成果</h3>
+                        <p>配信業務を90％削減、平均返信率20％超、社内テンプレート化を実現。</p>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Image Carousel -->
+                <div class="modal-body-right">
+                    <div class="carousel-container">
+                        <div class="carousel-slides">
+                            <div class="carousel-slide active">
+                                <img src="images/sugar-crm-dashboard.jpg" alt="AI Outreach Engine Dashboard">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/sugar-crm-dashboard.jpg" alt="Email Templates">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/sugar-crm-dashboard.jpg" alt="Analytics Dashboard">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel('modal1', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('modal1', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide('modal1', 0)"></span>
+                            <span class="dot" onclick="currentSlide('modal1', 1)"></span>
+                            <span class="dot" onclick="currentSlide('modal1', 2)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech Stack - Full Width Across Bottom -->
+            <div class="project-tech-section-full">
+                <h3 class="tech-heading">使用技術</h3>
+                <div class="tech-grid">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">Supabase</span>
+                    <span class="tech-badge">Prisma</span>
+                    <span class="tech-badge">n8n</span>
+                    <span class="tech-badge">Mailgun</span>
+                    <span class="tech-badge">GA4</span>
+                    <span class="tech-badge">Groq LLM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Freshh -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Freshh</h2>
+            <p class="project-subtitle">Fashion Marketplace Dashboard</p>
+            <div class="modal-body">
+                <!-- Left Column: Text Content -->
+                <div class="modal-body-left">
+                    <!-- Description -->
+                    <div class="project-description">
+                        <p>ファッションブランド向けに、売上・在庫・顧客データをリアルタイムで可視化する管理ダッシュボードを開発。非エンジニアでも操作可能なUX設計を重視。</p>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div class="project-results-section">
+                        <h3 class="results-heading">成果</h3>
+                        <p>表示速度25％向上、操作エラー率60％削減、NPS＋30pt向上。</p>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Image Carousel -->
+                <div class="modal-body-right">
+                    <div class="carousel-container">
+                        <div class="carousel-slides">
+                            <div class="carousel-slide active">
+                                <img src="images/velobank-landing.jpg" alt="Freshh Dashboard">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/velobank-landing.jpg" alt="Sales Analytics">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/velobank-landing.jpg" alt="Inventory Management">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel('modal2', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('modal2', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide('modal2', 0)"></span>
+                            <span class="dot" onclick="currentSlide('modal2', 1)"></span>
+                            <span class="dot" onclick="currentSlide('modal2', 2)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech Stack - Full Width Across Bottom -->
+            <div class="project-tech-section-full">
+                <h3 class="tech-heading">使用技術</h3>
+                <div class="tech-grid">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">Firebase</span>
+                    <span class="tech-badge">TailwindCSS</span>
+                    <span class="tech-badge">Recharts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: InterviewX -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>InterviewX</h2>
+            <p class="project-subtitle">AI Business Consulting Platform</p>
+            <div class="modal-body">
+                <!-- Left Column: Text Content -->
+                <div class="modal-body-left">
+                    <!-- Description -->
+                    <div class="project-description">
+                        <p>AIを活用し、スタートアップ経営者が自社の事業モデル・顧客ペルソナを分析できるWebアプリを構築。「戦略思考の民主化」をコンセプトに、ノンエンジニアでもデータに基づいた意思決定を行える仕組みを開発。</p>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div class="project-results-section">
+                        <h3 class="results-heading">成果</h3>
+                        <p>戦略分析時間を60％短縮、10社以上に導入、AIモデル精度85％超。</p>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Image Carousel -->
+                <div class="modal-body-right">
+                    <div class="carousel-container">
+                        <div class="carousel-slides">
+                            <div class="carousel-slide active">
+                                <img src="images/interviewx-platform.jpg" alt="InterviewX Platform">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/interviewx-platform.jpg" alt="AI Analysis">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/interviewx-platform.jpg" alt="Business Insights">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel('modal3', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('modal3', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide('modal3', 0)"></span>
+                            <span class="dot" onclick="currentSlide('modal3', 1)"></span>
+                            <span class="dot" onclick="currentSlide('modal3', 2)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech Stack - Full Width Across Bottom -->
+            <div class="project-tech-section-full">
+                <h3 class="tech-heading">使用技術</h3>
+                <div class="tech-grid">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">Recharts</span>
+                    <span class="tech-badge">AWS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: InsightHub -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>InsightHub</h2>
+            <p class="project-subtitle">KPI／プロジェクト管理ダッシュボード</p>
+            <div class="modal-body">
+                <!-- Left Column: Text Content -->
+                <div class="modal-body-left">
+                    <!-- Description -->
+                    <div class="project-description">
+                        <p>企業内の複数プロジェクトを横断的に管理し、KPI進捗をリアルタイムで可視化できるWebアプリを開発。経営層と実務層の情報断絶を解消することを目的とした。</p>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div class="project-results-section">
+                        <h3 class="results-heading">成果</h3>
+                        <p>タスク遅延40％削減、意思決定スピード1.5倍向上。</p>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Image Carousel -->
+                <div class="modal-body-right">
+                    <div class="carousel-container">
+                        <div class="carousel-slides">
+                            <div class="carousel-slide active">
+                                <img src="images/sugar-crm-dashboard.jpg" alt="InsightHub Dashboard">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/sugar-crm-dashboard.jpg" alt="KPI Tracking">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/sugar-crm-dashboard.jpg" alt="Project Overview">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel('modal4', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('modal4', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide('modal4', 0)"></span>
+                            <span class="dot" onclick="currentSlide('modal4', 1)"></span>
+                            <span class="dot" onclick="currentSlide('modal4', 2)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech Stack - Full Width Across Bottom -->
+            <div class="project-tech-section-full">
+                <h3 class="tech-heading">使用技術</h3>
+                <div class="tech-grid">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Redux</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">Recharts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: OEM Corporate CMS -->
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>OEM Corporate CMS</h2>
+            <p class="project-subtitle">健康機能食品OEM向けCMS</p>
+            <div class="modal-body">
+                <!-- Left Column: Text Content -->
+                <div class="modal-body-left">
+                    <!-- Description -->
+                    <div class="project-description">
+                        <p>企業の情報更新・SEO・顧客管理を効率化するため、CMS＋ダッシュボードを新規開発。既存サイトのUX・運用性を改善し、管理者の技術的負担を軽減。</p>
+                    </div>
+                    
+                    <!-- Results -->
+                    <div class="project-results-section">
+                        <h3 class="results-heading">成果</h3>
+                        <p>更新工数80％削減、検索流入＋30％、利用率100％達成。</p>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Image Carousel -->
+                <div class="modal-body-right">
+                    <div class="carousel-container">
+                        <div class="carousel-slides">
+                            <div class="carousel-slide active">
+                                <img src="images/velobank-landing.jpg" alt="OEM CMS Dashboard">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/velobank-landing.jpg" alt="Content Management">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/velobank-landing.jpg" alt="SEO Analytics">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel('modal5', -1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="moveCarousel('modal5', 1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide('modal5', 0)"></span>
+                            <span class="dot" onclick="currentSlide('modal5', 1)"></span>
+                            <span class="dot" onclick="currentSlide('modal5', 2)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech Stack - Full Width Across Bottom -->
+            <div class="project-tech-section-full">
+                <h3 class="tech-heading">使用技術</h3>
+                <div class="tech-grid">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">Zustand</span>
+                    <span class="tech-badge">TanStack Query</span>
+                    <span class="tech-badge">TailwindCSS</span>
+                    <span class="tech-badge">GA4</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <h2>Project 6</h2>
+            <div class="modal-body">
+                <p>プロジェクト6の詳細説明がここに入ります。</p>
+                
+                <div class="modal-links">
+                    <a href="#" class="modal-link">
+                        <i class="fas fa-play"></i> Demo
+                    </a>
+                    <a href="#" class="modal-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+                
+                <hr class="modal-separator">
+                
+                <div class="modal-tech">
+                    <h3>使用言語など</h3>
+                    <p>Technology stack for Project 6</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>
