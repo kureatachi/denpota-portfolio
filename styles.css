@@ -15,6 +15,12 @@ body {
     color: #2d3748;
     background: #ffffff;
     overflow-x: hidden;
+    /* Tech grid background */
+    background-image: 
+        linear-gradient(rgba(66, 153, 225, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 153, 225, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 0 0;
 }
 
 .container {
@@ -65,10 +71,26 @@ body {
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4299e1, #67e8f9);
+    transition: width 0.3s ease;
 }
 
 .nav-link:hover {
     color: #2d3748;
+}
+
+.nav-link:hover::before {
+    width: 100%;
 }
 
 .nav-link::after {
@@ -109,6 +131,14 @@ body {
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     color: #2d3748;
     overflow: hidden;
+    /* Tech-inspired overlay */
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(66, 153, 225, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(103, 232, 249, 0.05) 0%, transparent 50%),
+        linear-gradient(rgba(66, 153, 225, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 153, 225, 0.02) 1px, transparent 1px);
+    background-size: 800px 800px, 600px 600px, 40px 40px, 40px 40px;
+    background-position: 0 0, 100% 100%, 0 0, 0 0;
 }
 
 .hero::before {
@@ -324,6 +354,20 @@ body {
     overflow: hidden;
 }
 
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: left 0.5s ease;
+}
+
 .btn-primary {
     background: #4299e1;
     color: white;
@@ -335,6 +379,10 @@ body {
     background: #3182ce;
     transform: translateY(-1px);
     box-shadow: 0 6px 20px rgba(66, 153, 225, 0.35);
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn-secondary {
@@ -599,12 +647,80 @@ section {
     z-index: 2;
 }
 
+/* Interaction hint text */
+.flip-cards-hint {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #718096;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.flip-cards-hint .desktop-hint {
+    display: block;
+}
+
+.flip-cards-hint .mobile-hint {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .flip-cards-hint .desktop-hint {
+        display: none;
+    }
+    
+    .flip-cards-hint .mobile-hint {
+        display: block;
+    }
+}
+
 /* Flip Card */
 .flip-card {
     background-color: transparent;
     width: 100%;
     height: 380px;
     perspective: 1000px;
+    /* Subtle hint animation */
+    animation: subtleFloat 4s ease-in-out infinite;
+    /* Tech-inspired glow effect */
+    position: relative;
+}
+
+.flip-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        rgba(66, 153, 225, 0.1), 
+        rgba(103, 232, 249, 0.1), 
+        rgba(72, 187, 120, 0.1), 
+        rgba(237, 137, 54, 0.1), 
+        rgba(159, 122, 234, 0.1));
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Subtle floating animation to hint interactivity */
+@keyframes subtleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Stop animations when card is flipped or hovered */
+.flip-card:hover,
+.flip-card.flipped {
+    animation: none;
+}
+
+.flip-card:hover .card-icon,
+.flip-card.flipped .card-icon {
+    animation: none;
 }
 
 .flip-card-inner {
@@ -618,9 +734,23 @@ section {
     will-change: transform;
 }
 
+/* Enhanced cursor feedback */
+.flip-card:hover .flip-card-inner {
+    cursor: grab;
+}
+
+.flip-card:active .flip-card-inner {
+    cursor: grabbing;
+}
+
 .flip-card:hover .flip-card-inner,
 .flip-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
+}
+
+.flip-card:hover::before,
+.flip-card.flipped::before {
+    opacity: 1;
 }
 
 .flip-card:hover .flip-card-front,
@@ -675,6 +805,14 @@ section {
     box-shadow: 0 8px 25px rgba(66, 153, 225, 0.3);
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     will-change: transform, box-shadow;
+    /* Subtle icon animation hint */
+    animation: iconPulse 3s ease-in-out infinite;
+}
+
+/* Subtle icon pulsing animation */
+@keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
 }
 
 .diversity-card .card-icon {
@@ -966,6 +1104,14 @@ section {
     width: 100%;
     position: relative;
     overflow: hidden;
+    /* Tech grid overlay */
+    background-image: 
+        radial-gradient(circle at 30% 70%, rgba(72, 187, 120, 0.03) 0%, transparent 60%),
+        radial-gradient(circle at 70% 30%, rgba(237, 137, 54, 0.03) 0%, transparent 60%),
+        linear-gradient(rgba(66, 153, 225, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 153, 225, 0.02) 1px, transparent 1px);
+    background-size: 600px 600px, 500px 500px, 30px 30px, 30px 30px;
+    background-position: 0 0, 100% 0, 0 0, 0 0;
 }
 
 .introduction::before {
@@ -1362,6 +1508,13 @@ section {
 /* My Work Section */
 .work {
     background: #ffffff;
+    /* Tech grid overlay for work section */
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(159, 122, 234, 0.02) 0%, transparent 70%),
+        linear-gradient(rgba(66, 153, 225, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 153, 225, 0.015) 1px, transparent 1px);
+    background-size: 400px 400px, 35px 35px, 35px 35px;
+    background-position: 0 0, 0 0, 0 0;
 }
 
 .projects-grid {
@@ -1382,10 +1535,32 @@ section {
     overflow: hidden;
     transition: transform 0.2s ease-out;
     will-change: transform;
+    position: relative;
+    /* Tech-inspired subtle border */
+    border: 1px solid rgba(66, 153, 225, 0.1);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(66, 153, 225, 0.6), 
+        rgba(103, 232, 249, 0.6), 
+        rgba(72, 187, 120, 0.6));
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-3px);
+}
+
+.project-card:hover::before {
+    opacity: 1;
 }
 
 .project-image {
@@ -2381,6 +2556,14 @@ section {
 .contact {
     background: #f8fafc;
     padding: 6rem 0;
+    /* Tech grid overlay for contact section */
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(66, 153, 225, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(103, 232, 249, 0.04) 0%, transparent 50%),
+        linear-gradient(rgba(66, 153, 225, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 153, 225, 0.02) 1px, transparent 1px);
+    background-size: 700px 700px, 500px 500px, 45px 45px, 45px 45px;
+    background-position: 0 0, 100% 100%, 0 0, 0 0;
 }
 
 .contact-intro {
@@ -2424,12 +2607,32 @@ section {
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(66, 153, 225, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(66, 153, 225, 0.05), 
+        transparent);
+    transition: left 0.5s ease;
 }
 
 .contact-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.contact-card:hover::before {
+    left: 100%;
 }
 
 .contact-icon {
