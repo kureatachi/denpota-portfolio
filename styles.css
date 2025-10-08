@@ -788,6 +788,33 @@ section {
     background: linear-gradient(135deg, rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.95));
     color: #2d3748;
     transform: rotateY(180deg);
+    position: relative;
+    overflow: hidden;
+}
+
+.flip-card-back::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background: linear-gradient(45deg, 
+        rgba(66, 153, 225, 0.1), 
+        rgba(103, 232, 249, 0.1), 
+        rgba(66, 153, 225, 0.1)) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    animation: borderGlow 8s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
 }
 
 /* Card Icons */
@@ -826,8 +853,16 @@ section {
 }
 
 .diversity-card .flip-card-back {
-    background: linear-gradient(135deg, #f0fff4, #e6fffa);
-    border: 2px solid rgba(72, 187, 120, 0.2);
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border: 2px solid rgba(66, 153, 225, 0.15);
+    /* Tech grid overlay for diversity theme */
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(66, 153, 225, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(103, 232, 249, 0.04) 0%, transparent 50%),
+        linear-gradient(rgba(66, 153, 225, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 153, 225, 0.02) 1px, transparent 1px);
+    background-size: 150px 150px, 120px 120px, 20px 20px, 20px 20px;
+    background-position: 0 0, 100% 100%, 0 0, 0 0;
 }
 
 .diversity-card:hover .flip-card-inner,
@@ -836,12 +871,12 @@ section {
 }
 
 .diversity-card .card-back-title {
-    color: #38a169;
+    color: #4299e1;
     font-weight: 700;
 }
 
 .diversity-card .card-back-list li::before {
-    color: #48bb78;
+    color: #4299e1;
     animation: pulse 2s infinite;
 }
 
@@ -868,8 +903,16 @@ section {
 }
 
 .strategy-card .flip-card-back {
-    background: linear-gradient(135deg, #fff7ed, #fed7aa);
-    border: 2px solid rgba(237, 137, 54, 0.2);
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border: 2px solid rgba(66, 153, 225, 0.15);
+    /* Tech grid overlay for strategy theme */
+    background-image: 
+        radial-gradient(circle at 30% 20%, rgba(66, 153, 225, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(103, 232, 249, 0.04) 0%, transparent 50%),
+        linear-gradient(rgba(66, 153, 225, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 153, 225, 0.02) 1px, transparent 1px);
+    background-size: 140px 140px, 110px 110px, 22px 22px, 22px 22px;
+    background-position: 0 0, 100% 100%, 0 0, 0 0;
 }
 
 .strategy-card:hover .flip-card-inner,
@@ -878,12 +921,12 @@ section {
 }
 
 .strategy-card .card-back-title {
-    color: #dd6b20;
+    color: #4299e1;
     font-weight: 700;
 }
 
 .strategy-card .card-back-list li::before {
-    color: #ed8936;
+    color: #4299e1;
     animation: pulse 2s infinite;
 }
 
@@ -904,8 +947,16 @@ section {
 }
 
 .connection-card .flip-card-back {
-    background: linear-gradient(135deg, #faf5ff, #e9d5ff);
-    border: 2px solid rgba(159, 122, 234, 0.2);
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border: 2px solid rgba(66, 153, 225, 0.15);
+    /* Tech grid overlay for connection theme */
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(66, 153, 225, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(103, 232, 249, 0.04) 0%, transparent 50%),
+        linear-gradient(rgba(66, 153, 225, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 153, 225, 0.02) 1px, transparent 1px);
+    background-size: 160px 160px, 130px 130px, 18px 18px, 18px 18px;
+    background-position: 0 0, 100% 100%, 0 0, 0 0;
 }
 
 .connection-card:hover .flip-card-inner,
@@ -914,12 +965,12 @@ section {
 }
 
 .connection-card .card-back-title {
-    color: #805ad5;
+    color: #4299e1;
     font-weight: 700;
 }
 
 .connection-card .card-back-list li::before {
-    color: #9f7aea;
+    color: #4299e1;
     animation: pulse 2s infinite;
 }
 
@@ -952,8 +1003,35 @@ section {
     font-size: 1.3rem;
     font-weight: 600;
     color: #2d3748;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-family: 'Inter', sans-serif;
+    position: relative;
+    text-align: center;
+    /* Cohesive blue gradient text effect */
+    background: linear-gradient(90deg, 
+        rgba(66, 153, 225, 0.9), 
+        rgba(103, 232, 249, 0.9), 
+        rgba(66, 153, 225, 0.9));
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Subtle floating animation for card back content */
+@keyframes contentFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+}
+
+.flip-card-back .card-back-content {
+    animation: contentFloat 6s ease-in-out infinite;
 }
 
 .card-back-text {
@@ -971,6 +1049,23 @@ section {
     gap: 1.8rem;
     height: 100%;
     justify-content: space-between;
+    position: relative;
+}
+
+.card-back-content::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        rgba(66, 153, 225, 0.4), 
+        rgba(103, 232, 249, 0.4), 
+        rgba(66, 153, 225, 0.4));
+    border-radius: 1px;
+    animation: gradientShift 3s ease-in-out infinite;
 }
 
 .card-back-intro {
@@ -1000,12 +1095,19 @@ section {
 }
 
 .card-back-list li::before {
-    content: "✓";
+    content: "▶";
     position: absolute;
     left: 0;
-    color: #48bb78;
+    color: #4299e1;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+}
+
+.card-back-list li:hover::before {
+    transform: scale(1.2);
+    color: #67e8f9;
 }
 
 .about-text h3 {
