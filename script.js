@@ -2,16 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const typingElement = document.getElementById('typing-text');
     const cursor = document.querySelector('.cursor');
-    const animationContainer = document.querySelector('.hero-animation-container');
     
-    if (typingElement && cursor && animationContainer) {
+    if (typingElement && cursor) {
         const text = "ソフトウェア開発者 × マーケティングディレクター × デジタルアーティスト";
-        
-        // Create invisible placeholder to reserve space
-        const placeholder = document.createElement('span');
-        placeholder.className = 'typing-placeholder';
-        placeholder.textContent = text;
-        animationContainer.insertBefore(placeholder, animationContainer.firstChild);
         
         // Start with empty text
         typingElement.textContent = '';
@@ -22,10 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (index < text.length) {
                 typingElement.textContent += text.charAt(index);
                 index++;
-                setTimeout(typeText, 80);
+                // Adjust typing speed based on screen size
+                const isMobile = window.innerWidth <= 768;
+                const delay = isMobile ? 60 : 80;
+                setTimeout(typeText, delay);
             } else {
-                // Animation complete, remove placeholder and keep cursor blinking
-                placeholder.remove();
+                // Animation complete, keep cursor blinking
                 cursor.style.animation = 'blink 1s infinite';
             }
         }
@@ -87,6 +82,57 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe elements with fade-in class
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(el => observer.observe(el));
+});
+
+// Flip cards mobile support
+document.addEventListener('DOMContentLoaded', function() {
+    const flipCards = document.querySelectorAll('.flip-card');
+    
+    flipCards.forEach(card => {
+        // Handle click/tap events for mobile
+        card.addEventListener('click', function() {
+            // Only toggle on mobile devices or when not hovering (fallback)
+            if (window.innerWidth <= 768 || !this.matches(':hover')) {
+                // Close other flipped cards first
+                flipCards.forEach(otherCard => {
+                    if (otherCard !== this) {
+                        otherCard.classList.remove('flipped');
+                    }
+                });
+                
+                // Toggle this card
+                this.classList.toggle('flipped');
+            }
+        });
+        
+        // Handle touch events for better mobile experience
+        card.addEventListener('touchstart', function(e) {
+            e.preventDefault(); // Prevent double-tap zoom
+        });
+        
+        card.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            
+            // Close other flipped cards first
+            flipCards.forEach(otherCard => {
+                if (otherCard !== this) {
+                    otherCard.classList.remove('flipped');
+                }
+            });
+            
+            // Toggle this card
+            this.classList.toggle('flipped');
+        });
+    });
+    
+    // Close flipped cards when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.flip-card')) {
+            flipCards.forEach(card => {
+                card.classList.remove('flipped');
+            });
+        }
+    });
 });
 
 // Contact form handling

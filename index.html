@@ -20,23 +20,17 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">Denpota Furugaki</a>
+                <a href="#home" style="text-decoration: none; color: inherit;">
+                    <h2>Jake Furugaki</h2>
+                </a>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#work" class="nav-link">My Works</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contacts</a>
-                </li>
-            </ul>
-            <div class="hamburger">
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="#work" class="nav-link">My Works</a>
+                <a href="#contact" class="nav-link">Contacts</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -52,14 +46,10 @@
                     <span class="title-line">古垣 伝法太</span>
                     <span class="title-line">Jake Furugaki</span>
                 </h1>
-                <!-- Animated Text Component -->
-                <div class="hero-animation-container">
                 <p class="hero-subtitle">
                     <span class="typing-text" id="typing-text"></span>
                     <span class="cursor">|</span>
                 </p>
-                </div>
-                <!-- Static Button Component -->
                 <div class="hero-buttons">
                     <a href="#work" class="btn btn-primary">
                         <i class="fas fa-rocket"></i>
@@ -70,6 +60,11 @@
                         Get In Touch
                     </a>
                 </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </div>
     </section>
@@ -283,7 +278,7 @@
                             <div class="contact-details">
                                 <h4>Email</h4>
                             <a href="mailto:furugaki.denpota.ic.edu" class="contact-link">furugaki.denpota.ic.edu</a>
-                        </div>
+                            </div>
                         </div>
                         
                     <div class="contact-card">
@@ -293,7 +288,7 @@
                             <div class="contact-details">
                                 <h4>LinkedIn</h4>
                             <a href="https://www.linkedin.com/in/denpota-furugaki-26a395186/" target="_blank" class="contact-link">LinkedIn Profile</a>
-                        </div>
+                            </div>
                         </div>
                         
                     <div class="contact-card">

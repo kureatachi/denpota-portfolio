@@ -618,12 +618,15 @@ section {
     will-change: transform;
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
 
 .flip-card:hover .flip-card-front,
-.flip-card:hover .flip-card-back {
+.flip-card:hover .flip-card-back,
+.flip-card.flipped .flip-card-front,
+.flip-card.flipped .flip-card-back {
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
 }
 
@@ -689,7 +692,8 @@ section {
     border: 2px solid rgba(72, 187, 120, 0.2);
 }
 
-.diversity-card:hover .flip-card-inner {
+.diversity-card:hover .flip-card-inner,
+.diversity-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
 
@@ -709,7 +713,8 @@ section {
     100% { transform: scale(1); }
 }
 
-.diversity-card:hover .card-icon {
+.diversity-card:hover .card-icon,
+.diversity-card.flipped .card-icon {
     transform: scale(1.05);
     box-shadow: 0 12px 35px rgba(72, 187, 120, 0.4);
 }
@@ -729,7 +734,8 @@ section {
     border: 2px solid rgba(237, 137, 54, 0.2);
 }
 
-.strategy-card:hover .flip-card-inner {
+.strategy-card:hover .flip-card-inner,
+.strategy-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
 
@@ -743,7 +749,8 @@ section {
     animation: pulse 2s infinite;
 }
 
-.strategy-card:hover .card-icon {
+.strategy-card:hover .card-icon,
+.strategy-card.flipped .card-icon {
     transform: scale(1.05);
     box-shadow: 0 12px 35px rgba(237, 137, 54, 0.4);
 }
@@ -763,7 +770,8 @@ section {
     border: 2px solid rgba(159, 122, 234, 0.2);
 }
 
-.connection-card:hover .flip-card-inner {
+.connection-card:hover .flip-card-inner,
+.connection-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
 
@@ -777,7 +785,8 @@ section {
     animation: pulse 2s infinite;
 }
 
-.connection-card:hover .card-icon {
+.connection-card:hover .card-icon,
+.connection-card.flipped .card-icon {
     transform: scale(1.05);
     box-shadow: 0 12px 35px rgba(159, 122, 234, 0.4);
 }
@@ -1371,12 +1380,12 @@ section {
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease-out;
+    will-change: transform;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
 }
 
 .project-image {
@@ -1386,6 +1395,12 @@ section {
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 1.5rem;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .project-screenshot {
@@ -1512,15 +1527,13 @@ section {
     justify-content: center;
     color: #718096;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
     border: 1px solid #e5e7eb;
 }
 
 .project-icon:hover {
     background: #f1f5f9;
     color: #2d3748;
-    transform: translateY(-1px);
-    border-color: #cbd5e1;
 }
 .work-item {
     background: white;
@@ -1528,12 +1541,12 @@ section {
     padding: 2rem;
     margin-bottom: 3rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease-out;
+    will-change: transform;
 }
 
 .work-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
 }
 
 .work-header {
@@ -1566,12 +1579,11 @@ section {
     text-decoration: none;
     border-radius: 8px;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
+    transition: background-color 0.2s ease-out;
 }
 
 .work-link:hover {
     background: #1d4ed8;
-    transform: translateY(-2px);
 }
 
 .work-content {
@@ -1959,13 +1971,31 @@ section {
 
     .hero-title {
         font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1.2rem;
+    }
+
+    .title-line {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    .typing-text {
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 
     .hero-buttons {
         justify-content: center;
     }
-    }
-
 
     .skills-grid {
         grid-template-columns: 1fr;
@@ -2202,25 +2232,94 @@ section {
 
     .hero-title {
         font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
     }
 
-    .hero-animation-container {
-        height: 2.5rem; /* Smaller height for mobile */
-        margin-bottom: 1.5rem;
+    .title-line {
+        font-size: inherit;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 
     .hero-subtitle {
         font-size: 1.1rem;
-        height: 1.5rem; /* Smaller fixed height for mobile */
+        height: auto;
+        min-height: 1.5rem;
+        padding: 0 1rem;
+        text-align: center;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    .typing-text {
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 
     .btn {
         padding: 10px 20px;
         font-size: 0.9rem;
     }
+}
+
+/* Extra small screens (iPhone SE, older iPhones) */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.1;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        min-height: 1.3rem;
+        padding: 0 0.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
 
     .section-title {
         font-size: 1.8rem;
+    }
+}
+
+/* Mobile flip card improvements */
+@media (max-width: 768px) {
+    .flip-card {
+        cursor: pointer;
+        /* Ensure cards are easily tappable */
+        min-height: 280px;
+    }
+    
+    .flip-card-front, .flip-card-back {
+        /* Improve touch interaction */
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    
+    /* Add visual feedback for mobile taps */
+    .flip-card:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    .flip-card.flipped:active {
+        transform: none;
     }
 
     .about-stats {
