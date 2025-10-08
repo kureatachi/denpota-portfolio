@@ -125,14 +125,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Close flipped cards when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.flip-card')) {
-            flipCards.forEach(card => {
-                card.classList.remove('flipped');
-            });
-        }
+// Close flipped cards when clicking outside
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.flip-card')) {
+        flipCards.forEach(card => {
+            card.classList.remove('flipped');
+        });
+    }
+});
+
+// Profile image upload functionality
+const profileImageContainer = document.querySelector('.profile-image-container');
+const profileImage = document.getElementById('profileImage');
+const imagePlaceholder = document.querySelector('.image-placeholder');
+
+if (profileImageContainer) {
+    profileImageContainer.addEventListener('click', function() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        input.style.display = 'none';
+        
+        input.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profileImage.src = e.target.result;
+                    profileImageContainer.classList.add('has-image');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        document.body.appendChild(input);
+        input.click();
+        document.body.removeChild(input);
     });
+}
 });
 
 // Contact form handling
