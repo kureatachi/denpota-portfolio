@@ -2,29 +2,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     const typingElement = document.getElementById('typing-text');
     const cursor = document.querySelector('.cursor');
-    const subtitleContainer = document.querySelector('.hero-subtitle');
+    const animationContainer = document.querySelector('.hero-animation-container');
     
-    if (typingElement && cursor && subtitleContainer) {
+    if (typingElement && cursor && animationContainer) {
         const text = "ソフトウェア開発者 × マーケティングディレクター × デジタルアーティスト";
         
-        // Set a fixed height to prevent any layout shift
-        subtitleContainer.style.height = '4.5rem';
-        subtitleContainer.style.overflow = 'hidden';
+        // Create invisible placeholder to reserve space
+        const placeholder = document.createElement('span');
+        placeholder.className = 'typing-placeholder';
+        placeholder.textContent = text;
+        animationContainer.insertBefore(placeholder, animationContainer.firstChild);
         
-        // Pre-fill with invisible characters to reserve space
-        typingElement.textContent = text.replace(/./g, ' ');
+        // Start with empty text
+        typingElement.textContent = '';
         
         let index = 0;
         
         function typeText() {
             if (index < text.length) {
-                const newText = text.substring(0, index + 1) + text.substring(index + 1).replace(/./g, ' ');
-                typingElement.textContent = newText;
+                typingElement.textContent += text.charAt(index);
                 index++;
                 setTimeout(typeText, 80);
             } else {
-                // Animation complete, show final text and keep cursor blinking
-                typingElement.textContent = text;
+                // Animation complete, remove placeholder and keep cursor blinking
+                placeholder.remove();
                 cursor.style.animation = 'blink 1s infinite';
             }
         }
