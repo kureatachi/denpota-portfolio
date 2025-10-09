@@ -1113,6 +1113,7 @@ section {
     will-change: transform;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    transform-origin: center center;
 }
 
 /* Enhanced cursor feedback */
@@ -1126,7 +1127,7 @@ section {
 
 .flip-card:hover .flip-card-inner,
 .flip-card.flipped .flip-card-inner {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(0);
 }
 
 .flip-card:hover::before,
@@ -1143,6 +1144,8 @@ section {
 
 .flip-card-front, .flip-card-back {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
@@ -1171,7 +1174,6 @@ section {
     background: linear-gradient(135deg, rgba(248, 250, 252, 0.98), rgba(237, 242, 247, 0.98));
     color: #1a202c;
     transform: rotateY(180deg);
-    position: relative;
     overflow: hidden;
 }
 
@@ -1246,7 +1248,6 @@ section {
 .diversity-card .flip-card-back {
     background: linear-gradient(135deg, #f0fdf4, #dcfce7);
     border: 2px solid rgba(16, 185, 129, 0.25);
-    position: relative;
 }
 
 .diversity-card:hover .flip-card-inner,
@@ -1303,7 +1304,6 @@ section {
 .strategy-card .flip-card-back {
     background: linear-gradient(135deg, #fffbeb, #fef3c7);
     border: 2px solid rgba(245, 158, 11, 0.25);
-    position: relative;
 }
 
 .strategy-card:hover .flip-card-inner,
@@ -1354,7 +1354,6 @@ section {
 .connection-card .flip-card-back {
     background: linear-gradient(135deg, #faf5ff, #ede9fe);
     border: 2px solid rgba(139, 92, 246, 0.25);
-    position: relative;
 }
 
 .connection-card:hover .flip-card-inner,
