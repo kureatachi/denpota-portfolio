@@ -197,6 +197,11 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+// Initialize EmailJS
+(function() {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+})();
+
 // Contact form handling
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
@@ -206,22 +211,43 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
             
             // Simple validation
-            if (!name || !email || !subject || !message) {
+            if (!name || !email || !message) {
                 alert('すべてのフィールドを入力してください。');
                 return;
             }
             
-            // For now, just show a success message
-            // In a real implementation, you would send this to a server
-            alert('お問い合わせありがとうございます！24時間以内にご返信いたします。');
-            this.reset();
+            // Show loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+            submitButton.disabled = true;
+            
+            // Send email using EmailJS
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                from_name: name,
+                from_email: email,
+                message: message,
+                to_name: "Denpota Furugaki",
+            })
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('お問い合わせありがとうございます！24時間以内にご返信いたします。');
+                contactForm.reset();
+            })
+            .catch(function(error) {
+                console.error('FAILED...', error);
+                alert('送信に失敗しました。もう一度お試しください。');
+            })
+            .finally(function() {
+                // Restore button state
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+            });
         });
     }
 });
