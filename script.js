@@ -84,15 +84,18 @@ document.addEventListener('DOMContentLoaded', function() {
     fadeElements.forEach(el => observer.observe(el));
 });
 
-// Flip cards mobile support
+// Optimized flip cards - CSS-only hover with mobile fallback
 document.addEventListener('DOMContentLoaded', function() {
     const flipCards = document.querySelectorAll('.flip-card');
     
+    // Only add mobile touch support, let CSS handle hover
     flipCards.forEach(card => {
-        // Handle click/tap events for mobile
-        card.addEventListener('click', function() {
-            // Only toggle on mobile devices or when not hovering (fallback)
-            if (window.innerWidth <= 768 || !this.matches(':hover')) {
+        // Handle mobile tap events only
+        card.addEventListener('click', function(e) {
+            // Only on mobile devices
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                
                 // Close other flipped cards first
                 flipCards.forEach(otherCard => {
                     if (otherCard !== this) {
@@ -100,39 +103,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                // Toggle this card
+                // Toggle the current card
                 this.classList.toggle('flipped');
             }
         });
-        
-        // Handle touch events for better mobile experience
-        card.addEventListener('touchstart', function(e) {
-            e.preventDefault(); // Prevent double-tap zoom
-        });
-        
-        card.addEventListener('touchend', function(e) {
-            e.preventDefault();
-            
-            // Close other flipped cards first
-            flipCards.forEach(otherCard => {
-                if (otherCard !== this) {
-                    otherCard.classList.remove('flipped');
-                }
-            });
-            
-            // Toggle this card
-            this.classList.toggle('flipped');
-        });
     });
     
-    // Close flipped cards when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.flip-card')) {
-            flipCards.forEach(card => {
-                card.classList.remove('flipped');
-            });
-        }
-    });
+    // Close flipped cards when clicking outside (mobile only)
+    if (window.innerWidth <= 768) {
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.flip-card')) {
+                flipCards.forEach(card => {
+                    card.classList.remove('flipped');
+                });
+            }
+        });
+    }
 });
 
 // Profile image upload functionality
