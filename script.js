@@ -329,12 +329,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (slides.length > 0) {
         console.log('First slide is active:', slides[0].classList.contains('active'));
+        // Log all slides and their active status
+        slides.forEach((slide, index) => {
+            console.log(`Slide ${index}:`, slide.classList.contains('active') ? 'ACTIVE' : 'inactive');
+        });
     }
 });
 
 function moveArtCarousel(direction) {
-    alert('moveArtCarousel called with direction: ' + direction);
-    
     const slides = document.querySelectorAll('.art-carousel-slide');
     const dots = document.querySelectorAll('.art-dot');
     
