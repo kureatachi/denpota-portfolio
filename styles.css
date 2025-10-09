@@ -1223,13 +1223,13 @@ section {
 }
 
 .diversity-card .card-icon {
-    background: linear-gradient(135deg, #10b981, #059669);
-    box-shadow: 0 10px 35px rgba(16, 185, 129, 0.4);
+    background: linear-gradient(135deg, #4299e1, #67e8f9);
+    box-shadow: 0 10px 35px rgba(66, 153, 225, 0.4);
 }
 
 .diversity-card .flip-card-front {
-    background: linear-gradient(135deg, #ffffff, #ecfdf5);
-    border: 2px solid rgba(16, 185, 129, 0.3);
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    border: 2px solid rgba(66, 153, 225, 0.3);
     position: relative;
 }
 
@@ -1240,14 +1240,14 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at top right, rgba(66, 153, 225, 0.08) 0%, transparent 50%);
     border-radius: 24px;
     pointer-events: none;
 }
 
 .diversity-card .flip-card-back {
-    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-    border: 2px solid rgba(16, 185, 129, 0.25);
+    background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+    border: 2px solid rgba(66, 153, 225, 0.25);
 }
 
 .diversity-card:hover .flip-card-inner,
@@ -1256,13 +1256,13 @@ section {
 }
 
 .diversity-card .card-back-title {
-    color: #059669;
+    color: #2b6cb0;
     font-weight: 800;
     letter-spacing: 0.02em;
 }
 
 .diversity-card .card-back-list li::before {
-    color: #10b981;
+    color: #4299e1;
     animation: pulse 2s infinite;
 }
 
@@ -1275,17 +1275,17 @@ section {
 .diversity-card:hover .card-icon,
 .diversity-card.flipped .card-icon {
     transform: scale(1.08);
-    box-shadow: 0 15px 45px rgba(16, 185, 129, 0.5);
+    box-shadow: 0 15px 45px rgba(66, 153, 225, 0.5);
 }
 
 .strategy-card .card-icon {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    box-shadow: 0 10px 35px rgba(245, 158, 11, 0.4);
+    background: linear-gradient(135deg, #48bb78, #68d391);
+    box-shadow: 0 10px 35px rgba(72, 187, 120, 0.4);
 }
 
 .strategy-card .flip-card-front {
-    background: linear-gradient(135deg, #ffffff, #fef3c7);
-    border: 2px solid rgba(245, 158, 11, 0.3);
+    background: linear-gradient(135deg, #ffffff, #f0fff4);
+    border: 2px solid rgba(72, 187, 120, 0.3);
     position: relative;
 }
 
@@ -1296,14 +1296,14 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at top right, rgba(72, 187, 120, 0.08) 0%, transparent 50%);
     border-radius: 24px;
     pointer-events: none;
 }
 
 .strategy-card .flip-card-back {
-    background: linear-gradient(135deg, #fffbeb, #fef3c7);
-    border: 2px solid rgba(245, 158, 11, 0.25);
+    background: linear-gradient(135deg, #f0fff4, #dcfce7);
+    border: 2px solid rgba(72, 187, 120, 0.25);
 }
 
 .strategy-card:hover .flip-card-inner,
@@ -1312,30 +1312,30 @@ section {
 }
 
 .strategy-card .card-back-title {
-    color: #d97706;
+    color: #2f855a;
     font-weight: 800;
     letter-spacing: 0.02em;
 }
 
 .strategy-card .card-back-list li::before {
-    color: #f59e0b;
+    color: #48bb78;
     animation: pulse 2s infinite;
 }
 
 .strategy-card:hover .card-icon,
 .strategy-card.flipped .card-icon {
     transform: scale(1.08);
-    box-shadow: 0 15px 45px rgba(245, 158, 11, 0.5);
+    box-shadow: 0 15px 45px rgba(72, 187, 120, 0.5);
 }
 
 .connection-card .card-icon {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-    box-shadow: 0 10px 35px rgba(139, 92, 246, 0.4);
+    background: linear-gradient(135deg, #ed8936, #f6ad55);
+    box-shadow: 0 10px 35px rgba(237, 137, 54, 0.4);
 }
 
 .connection-card .flip-card-front {
-    background: linear-gradient(135deg, #ffffff, #f5f3ff);
-    border: 2px solid rgba(139, 92, 246, 0.3);
+    background: linear-gradient(135deg, #ffffff, #fef3c7);
+    border: 2px solid rgba(237, 137, 54, 0.3);
     position: relative;
 }
 
@@ -1346,14 +1346,14 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at top right, rgba(237, 137, 54, 0.08) 0%, transparent 50%);
     border-radius: 24px;
     pointer-events: none;
 }
 
 .connection-card .flip-card-back {
-    background: linear-gradient(135deg, #faf5ff, #ede9fe);
-    border: 2px solid rgba(139, 92, 246, 0.25);
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    border: 2px solid rgba(237, 137, 54, 0.25);
 }
 
 .connection-card:hover .flip-card-inner,
@@ -1362,20 +1362,20 @@ section {
 }
 
 .connection-card .card-back-title {
-    color: #7c3aed;
+    color: #c05621;
     font-weight: 800;
     letter-spacing: 0.02em;
 }
 
 .connection-card .card-back-list li::before {
-    color: #8b5cf6;
+    color: #ed8936;
     animation: pulse 2s infinite;
 }
 
 .connection-card:hover .card-icon,
 .connection-card.flipped .card-icon {
     transform: scale(1.08);
-    box-shadow: 0 15px 45px rgba(139, 92, 246, 0.5);
+    box-shadow: 0 15px 45px rgba(237, 137, 54, 0.5);
 }
 
 /* Card Text */
