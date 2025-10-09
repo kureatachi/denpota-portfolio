@@ -320,6 +320,18 @@ function closeModal(modalId) {
 // Art Carousel functionality (for About page)
 let currentArtSlide = 0;
 
+// Initialize art carousel on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.art-carousel-slide');
+    const dots = document.querySelectorAll('.art-dot');
+    
+    console.log('Art carousel initialized - slides found:', slides.length, 'dots found:', dots.length);
+    
+    if (slides.length > 0) {
+        console.log('First slide is active:', slides[0].classList.contains('active'));
+    }
+});
+
 function moveArtCarousel(direction) {
     const slides = document.querySelectorAll('.art-carousel-slide');
     const dots = document.querySelectorAll('.art-dot');
