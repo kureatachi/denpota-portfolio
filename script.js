@@ -324,7 +324,12 @@ function moveArtCarousel(direction) {
     const slides = document.querySelectorAll('.art-carousel-slide');
     const dots = document.querySelectorAll('.art-dot');
     
-    if (slides.length === 0) return;
+    if (slides.length === 0) {
+        console.log('No art carousel slides found');
+        return;
+    }
+    
+    console.log('Moving art carousel:', direction, 'current slide:', currentArtSlide);
     
     // Remove active class from current
     slides[currentArtSlide].classList.remove('active');
@@ -343,13 +348,20 @@ function moveArtCarousel(direction) {
     // Add active class to new
     slides[currentArtSlide].classList.add('active');
     dots[currentArtSlide].classList.add('active');
+    
+    console.log('New slide:', currentArtSlide);
 }
 
 function goToArtSlide(index) {
     const slides = document.querySelectorAll('.art-carousel-slide');
     const dots = document.querySelectorAll('.art-dot');
     
-    if (slides.length === 0) return;
+    if (slides.length === 0) {
+        console.log('No art carousel slides found');
+        return;
+    }
+    
+    console.log('Going to art slide:', index);
     
     // Remove active class from current
     slides[currentArtSlide].classList.remove('active');
