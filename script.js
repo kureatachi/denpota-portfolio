@@ -333,6 +333,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function moveArtCarousel(direction) {
+    alert('moveArtCarousel called with direction: ' + direction);
+    
     const slides = document.querySelectorAll('.art-carousel-slide');
     const dots = document.querySelectorAll('.art-dot');
     
