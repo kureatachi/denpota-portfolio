@@ -366,6 +366,16 @@ function moveArtCarousel(direction) {
     dots[currentArtSlide].classList.add('active');
     
     console.log('New slide:', currentArtSlide);
+    
+    // Force visual change - add temporary style to test
+    slides.forEach((slide, index) => {
+        if (index === currentArtSlide) {
+            slide.style.opacity = '1';
+            slide.style.display = 'flex';
+        } else {
+            slide.style.opacity = '0';
+        }
+    });
 }
 
 function goToArtSlide(index) {
