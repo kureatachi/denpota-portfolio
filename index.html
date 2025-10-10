@@ -138,10 +138,10 @@
                                 <li>プロダクト要件定義からロードマップ設計、検証まで一貫して推進</li>
                             </ul>
                         </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
+
             <!-- Connection Card -->
             <div class="flip-card connection-card">
                 <div class="flip-card-inner">
@@ -191,39 +191,44 @@
                 <div class="work-item" onclick="openModal('modal1')">
                     <div class="work-image">
                         <img src="images/projects/aiengine/ai-engine.png" alt="AI Outreach Engine">
-                    </div>
+                        <div class="work-category">B2B SaaS</div>
+                        </div>
                     <div class="work-title">AI Outreach Engine</div>
-                            </div>
+                        </div>
 
                 <!-- Project 2: Freshh -->
                 <div class="work-item" onclick="openModal('modal2')">
                     <div class="work-image">
                         <img src="images/projects/freshh/freshh-1.webp" alt="Freshh Dashboard">
+                        <div class="work-category">E-commerce</div>
                     </div>
                     <div class="work-title">Freshh</div>
-                </div>
+                            </div>
 
                 <!-- Project 3: InterviewX -->
                 <div class="work-item" onclick="openModal('modal3')">
                     <div class="work-image">
                         <img src="images/profile/portfolio-01.webp" alt="InterviewX Platform">
+                        <div class="work-category">AI Platform</div>
                     </div>
                     <div class="work-title">InterviewX</div>
-                            </div>
+                </div>
 
                 <!-- Project 4: InsightHub -->
                 <div class="work-item" onclick="openModal('modal4')">
                     <div class="work-image">
                         <img src="images/projects/insighthub/insighthub-1.webp" alt="InsightHub Dashboard">
+                        <div class="work-category">Analytics</div>
                     </div>
                     <div class="work-title">InsightHub</div>
-                </div>
+                            </div>
 
                 <!-- Project 5: OEM Corporate CMS -->
                 <div class="work-item" onclick="openModal('modal5')">
                     <div class="work-image">
                         <img src="images/projects/oem/oem1.webp" alt="OEM Corporate CMS">
-                    </div>
+                        <div class="work-category">CMS</div>
+                            </div>
                     <div class="work-title">OEM Corporate CMS</div>
                             </div>
 
@@ -231,12 +236,85 @@
                 <div class="work-item" onclick="openModal('modal6')">
                     <div class="work-image">
                         <img src="images/Sugarcrm1.webp" alt="SugarCRM">
+                        <div class="work-category">CRM</div>
                     </div>
                     <div class="work-title">SugarCRM</div>
                 </div>
             </div>
+
+            <!-- Case Studies Subsection -->
+            <div class="case-studies-section">
+                <div class="section-header">
+                    <h3 class="subsection-title">Case Studies</h3>
+                    <p class="subsection-subtitle japanese-subtitle">ブランドパートナーシップ実績</p>
+                </div>
+
+                <div class="case-studies-carousel-wrapper">
+                    <div class="case-studies-carousel-container">
+                        <div class="case-studies-carousel-track">
+                            <!-- Case Study 1: Onitsuka Tiger -->
+                            <div class="case-study-slide active">
+                                <div class="case-study-item onitsuka-case" onclick="openModal('caseStudyModal1')">
+                                    <div class="case-study-image">
+                                        <img src="images/brands/onitsuka/onitsuka.png" alt="Onitsuka Tiger" onerror="this.src='images/brands/onitsuka-tiger-logo.png';">
+                                        <div class="case-study-category">Global Marketing</div>
+                        </div>
+                                    <div class="case-study-content">
+                                        <h3 class="case-study-title">Onitsuka Tiger</h3>
+                                        <p class="case-study-subtitle">グローバル市場で954億円の売上を実現した<br>行列を生んだマーケティング戦略</p>
+                        </div>
+                    </div>
+                            </div>
+
+                            <!-- Case Study 2: CrowdStrike Japan -->
+                            <div class="case-study-slide">
+                                <div class="case-study-item crowdstrike-case" onclick="openModal('caseStudyModal2')">
+                                    <div class="case-study-image">
+                                        <img src="images/brands/crowdstrike/crowdstrike.png" alt="CrowdStrike Japan">
+                                        <div class="case-study-category">Cybersecurity</div>
+                                    </div>
+                                    <div class="case-study-content">
+                                        <h3 class="case-study-title">CrowdStrike Japan</h3>
+                                        <p class="case-study-subtitle">日本市場でパートナー企業数を3倍に拡大した<br>ローカライズ戦略によるブランド信頼構築</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Case Study 3: Meta -->
+                            <div class="case-study-slide">
+                                <div class="case-study-item meta-case" onclick="openModal('caseStudyModal3')">
+                                    <div class="case-study-image">
+                                        <img src="images/brands/meta/meta.png" alt="Meta">
+                                        <div class="case-study-category">Performance Marketing</div>
+                                    </div>
+                                    <div class="case-study-content">
+                                        <h3 class="case-study-title">Meta</h3>
+                                        <p class="case-study-subtitle">全34名中No.1のトップパフォーマーを達成した<br>データドリブンなマーケティング戦略</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Arrows -->
+                        <button class="case-study-nav prev" onclick="moveCaseStudyCarousel(-1)" aria-label="Previous case study">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="case-study-nav next" onclick="moveCaseStudyCarousel(1)" aria-label="Next case study">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        </div>
+
+                    <!-- Carousel Indicators -->
+                    <div class="case-study-indicators">
+                        <span class="case-study-dot active" onclick="goToCaseStudySlide(0)"></span>
+                        <span class="case-study-dot" onclick="goToCaseStudySlide(1)"></span>
+                        <span class="case-study-dot" onclick="goToCaseStudySlide(2)"></span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -722,6 +800,82 @@
                     <span class="tech-badge">Chart.js</span>
                     <span class="tech-badge">Firebase</span>
                     <span class="tech-badge">Express</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Study Modals -->
+    <!-- Case Study Modal 1: Onitsuka Tiger -->
+    <div id="caseStudyModal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('caseStudyModal1')">&times;</span>
+            <h2>Onitsuka Tiger</h2>
+            <p class="project-subtitle">グローバルマーケティング戦略の統括とブランド成長の実現</p>
+            <div class="modal-body">
+                <div class="modal-body-left">
+                    <div class="brand-modal-header">
+                        <img src="images/brands/onitsuka/onitsuka.png" alt="Onitsuka Tiger Logo">
+                    </div>
+                </div>
+                <div class="modal-body-right">
+                    <div class="project-description">
+                        <p>17か国におよぶ広告運用を統括し、<strong>平均ROAS 120％</strong>を10か月間維持（広告予算1億円規模）。</p>
+                        
+                        <p>データドリブンな最適化とブランド戦略の再設計により、<strong>2024年度売上954億円（前年比＋58.3％）</strong>という過去最高水準を達成。</p>
+                        
+                        <p>銀座旗艦店では行列ができるほどの高いブランド熱量を創出し、D2C戦略、SNS施策、プレミアムブランド化を総合的に推進することで、グローバル市場におけるブランド価値を大幅に高めた。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Study Modal 2: CrowdStrike Japan -->
+    <div id="caseStudyModal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('caseStudyModal2')">&times;</span>
+            <h2>CrowdStrike Japan</h2>
+            <p class="project-subtitle">ローカライズ戦略によるブランド信頼構築と市場教育の推進</p>
+            <div class="modal-body">
+                <div class="modal-body-left">
+                    <div class="brand-modal-header">
+                        <img src="images/brands/crowdstrike/crowdstrike.png" alt="CrowdStrike Logo">
+                    </div>
+                </div>
+                <div class="modal-body-right">
+                    <div class="project-description">
+                        <p>日本市場におけるブランド認知・信頼向上を目的に、教育型マーケティングとローカライズ施策を主導。</p>
+                        
+                        <p>高度なサイバー防御ソリューションの価値を適切なターゲット層へ届けることで、企業のセキュリティ意識を底上げし、<strong>国内パートナー企業数を3倍に拡大</strong>。</p>
+                        
+                        <p>その結果、アジア太平洋地域におけるブランド影響力が過去最高水準に達し、日本市場でのCrowdStrikeの地位確立に貢献した。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Study Modal 3: Meta -->
+    <div id="caseStudyModal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('caseStudyModal3')">&times;</span>
+            <h2>Meta</h2>
+            <p class="project-subtitle">データ戦略を基盤としたパフォーマンスマーケティングの最前線</p>
+            <div class="modal-body">
+                <div class="modal-body-left">
+                    <div class="brand-modal-header">
+                        <img src="images/brands/meta/meta.png" alt="Meta Logo">
+                    </div>
+                </div>
+                <div class="modal-body-right">
+                    <div class="project-description">
+                        <p>Meta（旧Facebook）にて、<strong>全34名中No.1コンサルタント（Q1 トップパフォーマー）</strong>として表彰。</p>
+                        
+                        <p>データ分析に基づく広告最適化とコミュニケーション戦略により、クライアントのROI最大化を実現し、業界内で高い評価を獲得。</p>
+                        
+                        <p>Meta広告アルゴリズムの基盤を深く理解し、後に他プラットフォームにも応用されたソーシャルメディア広告運用モデルの礎を築いた。</p>
+                    </div>
                 </div>
             </div>
         </div>

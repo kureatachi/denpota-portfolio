@@ -400,3 +400,181 @@ function goToArtSlide(index) {
     slides[currentArtSlide].classList.add('active');
     dots[currentArtSlide].classList.add('active');
 }
+
+// Case Studies Carousel - Center Focus with Auto-Rotation
+let currentCaseStudySlide = 1; // Start with middle slide
+let caseStudyAutoRotate;
+
+function updateCaseStudyPositions() {
+    const caseStudySlides = document.querySelectorAll('.case-study-slide');
+    const caseStudyDots = document.querySelectorAll('.case-study-dot');
+    const totalSlides = caseStudySlides.length;
+    
+    if (totalSlides === 0) return;
+    
+    caseStudySlides.forEach((slide, index) => {
+        // Remove all position classes
+        slide.classList.remove('center', 'left', 'right', 'hidden');
+        
+        // Calculate position relative to current slide
+        let position = index - currentCaseStudySlide;
+        
+        // Handle wrap-around
+        if (position < -Math.floor(totalSlides / 2)) {
+            position += totalSlides;
+        } else if (position > Math.floor(totalSlides / 2)) {
+            position -= totalSlides;
+        }
+        
+        // Apply position classes
+        if (position === 0) {
+            slide.classList.add('center');
+        } else if (position === -1) {
+            slide.classList.add('left');
+        } else if (position === 1) {
+            slide.classList.add('right');
+        } else {
+            slide.classList.add('hidden');
+        }
+    });
+    
+    // Update dots
+    caseStudyDots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentCaseStudySlide);
+    });
+}
+
+function moveCaseStudyCarousel(direction) {
+    const caseStudySlides = document.querySelectorAll('.case-study-slide');
+    const totalSlides = caseStudySlides.length;
+    
+    if (totalSlides === 0) return;
+    
+    // Calculate new slide index
+    currentCaseStudySlide += direction;
+    
+    if (currentCaseStudySlide >= totalSlides) {
+        currentCaseStudySlide = 0;
+    } else if (currentCaseStudySlide < 0) {
+        currentCaseStudySlide = totalSlides - 1;
+    }
+    
+    updateCaseStudyPositions();
+    resetCaseStudyAutoRotate();
+}
+
+function goToCaseStudySlide(index) {
+    const caseStudySlides = document.querySelectorAll('.case-study-slide');
+    const totalSlides = caseStudySlides.length;
+    
+    if (index < 0 || index >= totalSlides) return;
+    
+    currentCaseStudySlide = index;
+    updateCaseStudyPositions();
+    resetCaseStudyAutoRotate();
+}
+
+// Auto-rotate functionality
+function startCaseStudyAutoRotate() {
+    caseStudyAutoRotate = setInterval(() => {
+        moveCaseStudyCarousel(1);
+    }, 5000); // Rotate every 5 seconds
+}
+
+function resetCaseStudyAutoRotate() {
+    clearInterval(caseStudyAutoRotate);
+    startCaseStudyAutoRotate();
+}
+
+// Swipe gesture support
+function initCaseStudySwipe() {
+    const track = document.querySelector('.case-studies-carousel-track');
+    if (!track) return;
+    
+    let startX = 0;
+    let isDragging = false;
+    
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    }, { passive: true });
+    
+    track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+    }, { passive: true });
+    
+    track.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        
+        // Swipe threshold
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                // Swiped left - go to next
+                moveCaseStudyCarousel(1);
+            } else {
+                // Swiped right - go to previous
+                moveCaseStudyCarousel(-1);
+            }
+        }
+        
+        isDragging = false;
+    });
+    
+    // Mouse drag support for desktop
+    track.addEventListener('mousedown', (e) => {
+        startX = e.clientX;
+        isDragging = true;
+        track.style.cursor = 'grabbing';
+    });
+    
+    track.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+    });
+    
+    track.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        
+        const endX = e.clientX;
+        const diff = startX - endX;
+        
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                moveCaseStudyCarousel(1);
+            } else {
+                moveCaseStudyCarousel(-1);
+            }
+        }
+        
+        isDragging = false;
+        track.style.cursor = 'grab';
+    });
+    
+    track.addEventListener('mouseleave', () => {
+        isDragging = false;
+        track.style.cursor = 'grab';
+    });
+}
+
+// Initialize case studies carousel
+document.addEventListener('DOMContentLoaded', function() {
+    const caseStudySlides = document.querySelectorAll('.case-study-slide');
+    
+    if (caseStudySlides.length > 0) {
+        updateCaseStudyPositions();
+        startCaseStudyAutoRotate();
+        initCaseStudySwipe();
+        
+        // Click on side slides to navigate
+        caseStudySlides.forEach((slide, index) => {
+            slide.addEventListener('click', () => {
+                if (index !== currentCaseStudySlide) {
+                    goToCaseStudySlide(index);
+                }
+            });
+        });
+    }
+});
+
