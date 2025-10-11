@@ -1781,6 +1781,55 @@ section {
     border: 1px solid #e2e8f0;
 }
 
+/* Creative Activities Section */
+.creative-activities-section {
+    margin: 2.5rem 0;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.creative-activities-content {
+    margin-top: 1.5rem;
+}
+
+.creative-activities-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.creative-activities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.creative-activities-list li {
+    padding: 0.75rem 0 0.75rem 1.75rem;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    border-bottom: 1px solid #f7fafc;
+}
+
+.creative-activities-list li:last-child {
+    border-bottom: none;
+}
+
+.creative-activities-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: #4299e1;
+    font-size: 1.1rem;
+}
+
 /* Career and Achievements Section */
 .achievements-section {
     margin: 2.5rem 0;
@@ -2110,6 +2159,7 @@ section {
     position: relative;
     border-bottom: 2px solid #e2e8f0;
     padding-bottom: 0.75rem;
+    text-align: center;
 }
 
 .creative-intro {
@@ -2118,6 +2168,7 @@ section {
     line-height: 1.7;
     margin-bottom: 2rem;
     font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
 }
 
 /* Creative Works Overview */
