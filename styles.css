@@ -2286,6 +2286,24 @@ section {
     border: 1px solid #e2e8f0;
 }
 
+/* Creative Works Section Spacing */
+.creative-works-section {
+    margin-top: 8rem;
+    padding-top: 6rem;
+    position: relative;
+}
+
+.creative-works-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #4299e1 50%, transparent 100%);
+}
+
 .creative-category {
     background: transparent;
     padding: 0;
@@ -4850,6 +4868,16 @@ section {
 }
 
 @media (max-width: 768px) {
+    .creative-works-section {
+        margin-top: 5rem;
+        padding-top: 4rem;
+    }
+
+    .creative-works-section::before {
+        width: 80px;
+        height: 2px;
+    }
+
     .case-studies-section {
         margin-top: 3rem;
         padding-top: 2rem;
