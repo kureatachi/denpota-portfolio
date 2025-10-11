@@ -317,89 +317,53 @@ function closeModal(modalId) {
     }
 }
 
-// Art Carousel functionality (for About page)
-let currentArtSlide = 0;
-
-// Initialize art carousel on page load
+// Art Carousel - Simple & Reliable
 document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.art-carousel-slide');
-    const dots = document.querySelectorAll('.art-dot');
+    const carousel = document.querySelector('.art-carousel');
+    if (!carousel) return; // Exit if no carousel on page
     
-    console.log('Art carousel initialized - slides found:', slides.length, 'dots found:', dots.length);
+    const slides = carousel.querySelectorAll('.art-slide');
+    const prevBtn = carousel.querySelector('.art-prev');
+    const nextBtn = carousel.querySelector('.art-next');
+    const indicators = carousel.querySelectorAll('.art-indicator');
     
-    if (slides.length > 0) {
-        console.log('First slide is active:', slides[0].classList.contains('active'));
-        // Log all slides and their active status
-        slides.forEach((slide, index) => {
-            console.log(`Slide ${index}:`, slide.classList.contains('active') ? 'ACTIVE' : 'inactive');
+    let currentIndex = 0;
+    
+    function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => slide.classList.remove('show'));
+        
+        // Remove active from all indicators
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Show current slide
+        slides[index].classList.add('show');
+        
+        // Activate current indicator
+        indicators[index].classList.add('active');
+    }
+    
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+    
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+    
+    // Event listeners
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentIndex = index;
+            showSlide(currentIndex);
         });
-    }
-});
-
-function moveArtCarousel(direction) {
-    const slides = document.querySelectorAll('.art-carousel-slide');
-    const dots = document.querySelectorAll('.art-dot');
-    
-    if (slides.length === 0) {
-        console.log('No art carousel slides found');
-        return;
-    }
-    
-    console.log('Moving art carousel:', direction, 'current slide:', currentArtSlide);
-    
-    // Remove active class from current
-    slides[currentArtSlide].classList.remove('active');
-    dots[currentArtSlide].classList.remove('active');
-    
-    // Calculate new index
-    currentArtSlide += direction;
-    
-    // Wrap around
-    if (currentArtSlide >= slides.length) {
-        currentArtSlide = 0;
-    } else if (currentArtSlide < 0) {
-        currentArtSlide = slides.length - 1;
-    }
-    
-    // Add active class to new
-    slides[currentArtSlide].classList.add('active');
-    dots[currentArtSlide].classList.add('active');
-    
-    console.log('New slide:', currentArtSlide);
-    
-    // Force visual change - add temporary style to test
-    slides.forEach((slide, index) => {
-        if (index === currentArtSlide) {
-            slide.style.opacity = '1';
-            slide.style.display = 'flex';
-        } else {
-            slide.style.opacity = '0';
-        }
     });
-}
-
-function goToArtSlide(index) {
-    const slides = document.querySelectorAll('.art-carousel-slide');
-    const dots = document.querySelectorAll('.art-dot');
-    
-    if (slides.length === 0) {
-        console.log('No art carousel slides found');
-        return;
-    }
-    
-    console.log('Going to art slide:', index);
-    
-    // Remove active class from current
-    slides[currentArtSlide].classList.remove('active');
-    dots[currentArtSlide].classList.remove('active');
-    
-    // Set new index
-    currentArtSlide = index;
-    
-    // Add active class to new
-    slides[currentArtSlide].classList.add('active');
-    dots[currentArtSlide].classList.add('active');
-}
+});
 
 // Case Studies Carousel - Center Focus with Auto-Rotation
 let currentCaseStudySlide = 1; // Start with middle slide

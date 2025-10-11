@@ -226,56 +226,81 @@
                 <p class="creative-intro">デザインとAIを活用したデジタル作品。</p>
                 
                 <!-- Art Carousel -->
-                <div class="art-carousel-container">
-                    <div class="art-carousel-slides">
-                        <!-- Artwork 1 -->
-                        <div class="art-carousel-slide active">
-                            <div class="art-carousel-image">
+                <div class="art-carousel">
+                    <div class="art-carousel-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="art-slide show">
+                            <div class="art-image">
                                 <img src="images/art/denpota-art.jpg" alt="Magnetic World Cup">
                             </div>
-                            <div class="art-carousel-info">
+                            <div class="art-content">
                                 <h4 class="art-title">Magnetic World Cup</h4>
-                                <p class="art-description">スポーツとアートの融合をテーマに、「世界が一つになる瞬間」を表現した作品。回転するトロフィーは"人類の結束"を象徴し、油彩タッチの選手たちは国や文化を越えて交わる多様性を描く。2024年「グローバル・スポーツアート・アワード」審査員特別賞受賞。</p>
+                                <p class="art-text">スポーツとアートの融合をテーマに、「世界が一つになる瞬間」を表現した作品。回転するトロフィーは"人類の結束"を象徴し、油彩タッチの選手たちは国や文化を越えて交わる多様性を描く。2024年「グローバル・スポーツアート・アワード」審査員特別賞受賞。</p>
                             </div>
                         </div>
                         
-                        <!-- Artwork 2 -->
-                        <div class="art-carousel-slide">
-                            <div class="art-carousel-image">
+                        <!-- Slide 2 -->
+                        <div class="art-slide">
+                            <div class="art-image">
                                 <img src="images/art/denpota-art1.jpg" alt="水と炎の融合">
                             </div>
-                            <div class="art-carousel-info">
+                            <div class="art-content">
                                 <h4 class="art-title">水と炎の融合 ― 自然の対話を描くアート</h4>
-                                <p class="art-description">清らかな川の流れと、燃え上がるマグマのような炎を融合させた作品。「対立するものの中にも調和がある」というテーマで、自然のエネルギーと美しさを表現しました。水の透明感と炎の躍動が混ざり合い、見る人に力強さと静けさを同時に感じさせます。</p>
+                                <p class="art-text">清らかな川の流れと、燃え上がるマグマのような炎を融合させた作品。「対立するものの中にも調和がある」というテーマで、自然のエネルギーと美しさを表現しました。水の透明感と炎の躍動が混ざり合い、見る人に力強さと静けさを同時に感じさせます。</p>
                             </div>
                         </div>
                         
-                        <!-- Artwork 3 -->
-                        <div class="art-carousel-slide">
-                            <div class="art-carousel-image">
+                        <!-- Slide 3 -->
+                        <div class="art-slide">
+                            <div class="art-image">
                                 <img src="images/art/denpota-art2.jpg" alt="一筆書きで描く未来万博">
                             </div>
-                            <div class="art-carousel-info">
+                            <div class="art-content">
                                 <h4 class="art-title">一筆書きで描く未来万博 ― 大屋根リングと多様なパビリオン</h4>
-                                <p class="art-description">清水寺の舞台のように力強く支えられた「大屋根リング」を一筆書きで表現。片側には海、もう片側には電車やバスで繋がるアクセス路を描き、中央には多様な建物や森、人々が集う未来の万博会場をイメージしました。リングの上にも人々が歩き、多様性と交流、バリアフリーの精神を象徴しています。</p>
+                                <p class="art-text">清水寺の舞台のように力強く支えられた「大屋根リング」を一筆書きで表現。片側には海、もう片側には電車やバスで繋がるアクセス路を描き、中央には多様な建物や森、人々が集う未来の万博会場をイメージしました。リングの上にも人々が歩き、多様性と交流、バリアフリーの精神を象徴しています。</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Navigation -->
-                    <button class="art-carousel-btn prev" onclick="moveArtCarousel(-1)">
+                    <!-- Controls -->
+                    <button class="art-btn art-prev">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button class="art-carousel-btn next" onclick="moveArtCarousel(1)">
+                    <button class="art-btn art-next">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                     
-                    <!-- Dots -->
-                    <div class="art-carousel-dots">
-                        <span class="art-dot active" onclick="goToArtSlide(0)"></span>
-                        <span class="art-dot" onclick="goToArtSlide(1)"></span>
-                        <span class="art-dot" onclick="goToArtSlide(2)"></span>
+                    <!-- Indicators -->
+                    <div class="art-indicators">
+                        <button class="art-indicator active" data-slide="0"></button>
+                        <button class="art-indicator" data-slide="1"></button>
+                        <button class="art-indicator" data-slide="2"></button>
                     </div>
+                </div>
+            </div>
+
+            <!-- Video Production -->
+            <div class="creative-category video-category">
+                <h4 class="creative-subheading">Video Production</h4>
+                <p class="creative-intro">映像制作スキルを活用したビデオコンテンツ。</p>
+                
+                <div class="video-showcase">
+                    <a href="https://drive.google.com/file/d/1NXVXe64skOaWabsLrClWIP7_WuyibWMH/view" class="video-link" target="_blank" rel="noopener noreferrer">
+                        <div class="video-thumbnail">
+                            <img src="images/video.png" alt="Video Showcase" class="video-thumbnail-image">
+                            <div class="video-play-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="video-overlay">
+                                <i class="fab fa-google-drive"></i>
+                                <span>Watch on Google Drive</span>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h4 class="video-title">Video Showcase</h4>
+                            <p class="video-description">映像制作の作品をご覧いただけます。</p>
+                        </div>
+                    </a>
                 </div>
             </div>
 
