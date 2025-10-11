@@ -6340,6 +6340,8 @@ section {
 
     .hero-subtitle {
         font-size: 1.2rem;
+        min-height: 3.5rem;
+        height: auto;
         padding: 0 1rem;
         word-break: keep-all;
         overflow-wrap: break-word;
@@ -6603,7 +6605,7 @@ section {
     .hero-subtitle {
         font-size: 1.1rem;
         height: auto;
-        min-height: 1.5rem;
+        min-height: 3.5rem;
         padding: 0 1rem;
         text-align: center;
         word-break: keep-all;
@@ -6632,7 +6634,8 @@ section {
 
     .hero-subtitle {
         font-size: 1rem;
-        min-height: 1.3rem;
+        min-height: 3rem;
+        height: auto;
         padding: 0 0.5rem;
     }
 
@@ -7515,6 +7518,8 @@ section {
         font-size: 0.95rem;
         line-height: 1.5;
         padding: 0 10px;
+        min-height: 3rem;
+        height: auto;
     }
 
     .hero-buttons {
@@ -7845,7 +7850,8 @@ section {
 
     .hero-subtitle {
         font-size: 0.9rem;
-        min-height: 1.3rem;
+        min-height: 2.8rem;
+        height: auto;
         padding: 0 0.5rem;
         line-height: 1.4;
     }
