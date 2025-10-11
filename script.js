@@ -61,6 +61,15 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
         });
+        
+        // Close menu when clicking on nav links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
     }
 });
 
