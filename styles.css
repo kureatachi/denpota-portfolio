@@ -7487,6 +7487,327 @@ section {
     }
 }
 
+/* iPhone 13 and similar devices (390px and below) */
+@media (max-width: 390px) {
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        min-height: 100vh;
+        padding: 80px 0 1rem 0;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 14px 24px;
+        font-size: 0.9rem;
+    }
+
+    /* Navigation */
+    .nav-container {
+        padding: 0 20px;
+        height: 65px;
+    }
+
+    .nav-logo h2 {
+        font-size: 1.4rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 0.9rem 1.8rem;
+    }
+
+    /* Section Headers */
+    .section-header {
+        margin-bottom: 3rem;
+        padding: 0 15px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-subtitle,
+    .subsection-subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Works Grid */
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 15px;
+    }
+
+    .work-item {
+        min-height: 150px;
+    }
+
+    .work-item:nth-child(n) {
+        border-radius: 16px;
+    }
+
+    .work-image {
+        min-height: 120px !important;
+    }
+
+    .work-title {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+
+    .work-category {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Case Studies */
+    .case-studies-section {
+        padding: 0 10px;
+    }
+
+    .case-studies-carousel-container {
+        padding: 0 30px;
+        min-height: 400px;
+    }
+
+    .case-study-slide {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .case-study-slide.center {
+        transform: translateX(0) scale(1);
+    }
+
+    .case-study-slide.left,
+    .case-study-slide.right {
+        transform: translateX(-80%) scale(0.75);
+        opacity: 0.6;
+    }
+
+    .case-study-slide.right {
+        transform: translateX(80%) scale(0.75);
+    }
+
+    .case-study-image {
+        height: 180px;
+    }
+
+    .case-study-title {
+        font-size: 1.2rem;
+    }
+
+    .case-study-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .case-study-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    /* Creative Works */
+    .creative-works-section {
+        margin-top: 5rem;
+        padding-top: 4rem;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .creative-works-section::before {
+        width: 80px;
+    }
+
+    .creative-subheading {
+        font-size: 1.3rem;
+    }
+
+    .creative-intro {
+        font-size: 0.9rem;
+    }
+
+    /* Art Carousel */
+    .art-carousel {
+        margin: 0 -15px;
+    }
+
+    .art-slide {
+        padding: 1rem;
+    }
+
+    .art-image {
+        height: 220px;
+    }
+
+    .art-content {
+        padding: 1rem;
+    }
+
+    .art-title {
+        font-size: 1.1rem;
+    }
+
+    .art-text {
+        font-size: 0.85rem;
+    }
+
+    .art-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    /* Video Section */
+    .video-showcase {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .video-thumbnail {
+        padding-top: 56%;
+    }
+
+    .video-play-icon {
+        font-size: 3.5rem;
+    }
+
+    /* Music Links */
+    .music-links {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Modals */
+    .modal-content {
+        width: 95% !important;
+        margin: 1rem auto !important;
+        max-height: 90vh !important;
+    }
+
+    .freshh-modal,
+    .interviewx-modal,
+    .insighthub-modal,
+    .sugarcrm-modal,
+    .oem-modal {
+        width: 95% !important;
+        height: auto !important;
+        max-height: 90vh !important;
+        border-radius: 16px !important;
+    }
+
+    .modal-side-by-side {
+        flex-direction: column !important;
+    }
+
+    .modal-left-side,
+    .modal-right-side {
+        flex: 1 1 100% !important;
+        border: none !important;
+    }
+
+    .modal-left-side::before {
+        display: none;
+    }
+
+    .modal-header {
+        padding: 1.5rem 1rem 1rem 1rem !important;
+    }
+
+    .modal-header h2 {
+        font-size: 1.6rem !important;
+    }
+
+    .modal-carousel-section {
+        padding: 1rem !important;
+    }
+
+    .carousel-slides {
+        height: 220px !important;
+    }
+
+    .tab-navigation {
+        flex-wrap: wrap;
+        padding: 0.4rem !important;
+        gap: 0.4rem !important;
+    }
+
+    .tab-btn {
+        font-size: 0.85rem !important;
+        padding: 0.7rem 0.8rem !important;
+        flex: 1 1 45% !important;
+    }
+
+    .tab-content {
+        padding: 1rem !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+
+    .content-grid {
+        gap: 1rem !important;
+    }
+
+    .content-card {
+        padding: 1.2rem !important;
+    }
+
+    .feature-item {
+        padding: 0.9rem 1rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    .process-step {
+        padding: 1rem !important;
+        gap: 0.8rem !important;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1rem;
+    }
+}
+
 /* iPhone X and smaller devices (375px and below) */
 @media (max-width: 375px) {
     /* Hero Section iPhone X Optimization */
