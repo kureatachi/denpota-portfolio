@@ -542,3 +542,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Tab functionality for modals (Freshh and InterviewX)
+function showTab(tabName) {
+    // Get the modal context (which modal is currently open)
+    const activeModal = document.querySelector('.modal[style*="display: block"]') || 
+                       document.querySelector('.modal[style*="display:block"]');
+    
+    if (!activeModal) return;
+    
+    // Hide all tab contents within this modal
+    const tabContents = activeModal.querySelectorAll('.tab-content');
+    tabContents.forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Remove active class from all tab buttons within this modal
+    const tabButtons = activeModal.querySelectorAll('.tab-btn');
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+    
+    // Show selected tab content
+    const selectedTab = activeModal.querySelector(`#${tabName}-tab`);
+    if (selectedTab) {
+        selectedTab.classList.add('active');
+    }
+    
+    // Add active class to clicked button
+    const clickedButton = activeModal.querySelector(`[onclick="showTab('${tabName}')"]`);
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
+}
+
