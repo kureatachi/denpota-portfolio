@@ -7740,20 +7740,18 @@ section {
         display: none;
     }
 
+    /* Hide carousel on mobile */
+    .modal-carousel-section {
+        display: none !important;
+    }
+
     .modal-header {
         padding: 1.5rem 1rem 1rem 1rem !important;
+        border-bottom: none !important;
     }
 
     .modal-header h2 {
         font-size: 1.6rem !important;
-    }
-
-    .modal-carousel-section {
-        padding: 1rem !important;
-    }
-
-    .carousel-slides {
-        height: 220px !important;
     }
 
     .tab-navigation {
