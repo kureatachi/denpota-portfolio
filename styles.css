@@ -2430,7 +2430,7 @@ section {
 }
 
 .art-content {
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 3.5rem 1.5rem;
 }
 
 .art-title {
@@ -2484,12 +2484,16 @@ section {
 
 .art-indicators {
     position: absolute;
-    bottom: 130px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 0.5rem;
     z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .art-indicator {
@@ -7670,8 +7674,8 @@ section {
         height: 220px;
     }
 
-    .art-content {
-        padding: 1rem;
+.art-content {
+        padding: 1rem 1rem 3rem 1rem;
     }
 
     .art-title {
@@ -7680,12 +7684,18 @@ section {
 
     .art-text {
         font-size: 0.85rem;
+        line-height: 1.5;
     }
 
     .art-btn {
         width: 45px;
         height: 45px;
         font-size: 1.2rem;
+    }
+
+    .art-indicators {
+        bottom: 8px;
+        padding: 0.4rem 0.8rem;
     }
 
     /* Video Section */
