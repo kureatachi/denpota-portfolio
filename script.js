@@ -551,6 +551,132 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Onitsuka Carousel functionality
+let currentOnitsukaIndex = 1;
+
+function moveOnitsukaCarousel(direction) {
+    const slides = document.querySelectorAll('#onitsukaCarousel .carousel-slide');
+    const dots = document.querySelectorAll('.onitsuka-carousel .dot');
+    
+    slides[currentOnitsukaIndex - 1].classList.remove('active');
+    dots[currentOnitsukaIndex - 1].classList.remove('active');
+    
+    currentOnitsukaIndex += direction;
+    
+    if (currentOnitsukaIndex > slides.length) {
+        currentOnitsukaIndex = 1;
+    }
+    if (currentOnitsukaIndex < 1) {
+        currentOnitsukaIndex = slides.length;
+    }
+    
+    slides[currentOnitsukaIndex - 1].classList.add('active');
+    dots[currentOnitsukaIndex - 1].classList.add('active');
+}
+
+function currentOnitsukaSlide(index) {
+    const slides = document.querySelectorAll('#onitsukaCarousel .carousel-slide');
+    const dots = document.querySelectorAll('.onitsuka-carousel .dot');
+    
+    slides[currentOnitsukaIndex - 1].classList.remove('active');
+    dots[currentOnitsukaIndex - 1].classList.remove('active');
+    
+    currentOnitsukaIndex = index;
+    
+    slides[currentOnitsukaIndex - 1].classList.add('active');
+    dots[currentOnitsukaIndex - 1].classList.add('active');
+}
+
+// Fishing Carousel functionality
+let currentFishingIndex = 1;
+
+function moveFishingCarousel(direction) {
+    const slides = document.querySelectorAll('#fishingCarousel .carousel-slide');
+    const dots = document.querySelectorAll('.fishing-carousel .dot');
+    
+    slides[currentFishingIndex - 1].classList.remove('active');
+    dots[currentFishingIndex - 1].classList.remove('active');
+    
+    currentFishingIndex += direction;
+    
+    if (currentFishingIndex > slides.length) {
+        currentFishingIndex = 1;
+    }
+    if (currentFishingIndex < 1) {
+        currentFishingIndex = slides.length;
+    }
+    
+    slides[currentFishingIndex - 1].classList.add('active');
+    dots[currentFishingIndex - 1].classList.add('active');
+}
+
+function currentFishingSlide(index) {
+    const slides = document.querySelectorAll('#fishingCarousel .carousel-slide');
+    const dots = document.querySelectorAll('.fishing-carousel .dot');
+    
+    slides[currentFishingIndex - 1].classList.remove('active');
+    dots[currentFishingIndex - 1].classList.remove('active');
+    
+    currentFishingIndex = index;
+    
+    slides[currentFishingIndex - 1].classList.add('active');
+    dots[currentFishingIndex - 1].classList.add('active');
+}
+
+// Tab functionality for Works section
+function showWorksTab(tabName) {
+    // Hide all works tab contents
+    const tabContents = document.querySelectorAll('.works-tab-content');
+    tabContents.forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Remove active class from all tab buttons
+    const tabButtons = document.querySelectorAll('.works-tab-btn');
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+    
+    // Show selected tab content
+    const selectedTab = document.getElementById(tabName + '-tab');
+    if (selectedTab) {
+        selectedTab.classList.add('active');
+    }
+    
+    // Add active class to clicked button
+    const clickedButton = document.querySelector(`[onclick="showWorksTab('${tabName}')"]`);
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
+}
+
+// Tab functionality for Case Studies section
+function showCaseStudyTab(tabName) {
+    // Hide all case study tab contents
+    const tabContents = document.querySelectorAll('.case-study-tab-content');
+    tabContents.forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Remove active class from all tab buttons
+    const tabButtons = document.querySelectorAll('.case-study-tab-btn');
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+    
+    // Show selected tab content
+    const selectedTab = document.getElementById(tabName + '-tab');
+    if (selectedTab) {
+        selectedTab.classList.add('active');
+    }
+    
+    // Add active class to clicked button
+    const clickedButton = document.querySelector(`[onclick="showCaseStudyTab('${tabName}')"]`);
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
+}
+
 // Tab functionality for modals (Freshh and InterviewX)
 function showTab(tabName) {
     // Get the modal context (which modal is currently open)
