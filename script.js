@@ -623,6 +623,42 @@ function currentFishingSlide(index) {
     dots[currentFishingIndex - 1].classList.add('active');
 }
 
+// Fishing Carousel functionality for Modal 8
+let currentFishingIndex8 = 1;
+
+function moveFishingCarousel8(direction) {
+    const slides = document.querySelectorAll('#fishingCarousel8 .carousel-slide');
+    const dots = document.querySelectorAll('#caseStudyModal8 .fishing-carousel .dot');
+    
+    slides[currentFishingIndex8 - 1].classList.remove('active');
+    dots[currentFishingIndex8 - 1].classList.remove('active');
+    
+    currentFishingIndex8 += direction;
+    
+    if (currentFishingIndex8 > slides.length) {
+        currentFishingIndex8 = 1;
+    }
+    if (currentFishingIndex8 < 1) {
+        currentFishingIndex8 = slides.length;
+    }
+    
+    slides[currentFishingIndex8 - 1].classList.add('active');
+    dots[currentFishingIndex8 - 1].classList.add('active');
+}
+
+function currentFishingSlide8(index) {
+    const slides = document.querySelectorAll('#fishingCarousel8 .carousel-slide');
+    const dots = document.querySelectorAll('#caseStudyModal8 .fishing-carousel .dot');
+    
+    slides[currentFishingIndex8 - 1].classList.remove('active');
+    dots[currentFishingIndex8 - 1].classList.remove('active');
+    
+    currentFishingIndex8 = index;
+    
+    slides[currentFishingIndex8 - 1].classList.add('active');
+    dots[currentFishingIndex8 - 1].classList.add('active');
+}
+
 // Tab functionality for Works section
 function showWorksTab(tabName) {
     // Hide all works tab contents
