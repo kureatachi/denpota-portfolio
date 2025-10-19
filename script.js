@@ -6,7 +6,15 @@ function toggleLanguage() {
     const toggleBtn = document.getElementById('lang-toggle');
     
     if (toggleBtn) {
-        toggleBtn.textContent = isEnglish ? 'JA' : 'EN';
+        // Remove existing classes
+        toggleBtn.classList.remove('english', 'japanese');
+        
+        // Add appropriate class based on current language
+        if (isEnglish) {
+            toggleBtn.classList.add('english');
+        } else {
+            toggleBtn.classList.add('japanese');
+        }
     }
     
     // Update content based on language
