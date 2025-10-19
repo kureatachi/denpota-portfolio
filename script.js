@@ -20,8 +20,8 @@ function updateContent() {
             element.getAttribute('data-en') : 
             element.getAttribute('data-ja');
         
-        // Handle HTML content (like <strong> tags)
-        if (text && text.includes('<strong>')) {
+        // Handle HTML content (like <strong> and <br> tags)
+        if (text && (text.includes('<strong>') || text.includes('<br>'))) {
             element.innerHTML = text;
         } else {
             element.textContent = text;
