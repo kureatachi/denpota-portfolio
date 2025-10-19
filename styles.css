@@ -4700,7 +4700,7 @@ section {
     line-height: 1.6;
     margin-bottom: 1.1rem;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 600;
+    font-weight: 500 !important;
 }
 
 .onitsuka-case-content .highlight-results {
@@ -4944,7 +4944,7 @@ section {
     line-height: 1.65;
     margin-bottom: 1rem;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 600;
+    font-weight: 500 !important;
 }
 
 .koala-case-content .highlight-results {
@@ -4971,7 +4971,7 @@ section {
     line-height: 1.65;
     margin-bottom: 1rem;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 600;
+    font-weight: 500 !important;
 }
 
 .crowdstrike-case-content .highlight-results {
@@ -5018,7 +5018,7 @@ section {
     line-height: 1.65;
     margin-bottom: 1rem;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 600;
+    font-weight: 500 !important;
 }
 
 .simply-case-content .highlight-results {
@@ -5048,7 +5048,7 @@ section {
     line-height: 1.6;
     margin-bottom: 1.1rem;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 600;
+    font-weight: 500 !important;
 }
 
 .fishing-case-content .highlight-results {
@@ -5215,8 +5215,8 @@ section {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #e2e8f0;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -5224,20 +5224,20 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    color: #4299e1;
-    font-weight: 600;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    color: #4a5568;
+    font-size: 1.2rem;
     transition: all 0.3s ease;
     z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .digital-art-prev:hover,
 .digital-art-next:hover {
-    background: white;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    transform: translateY(-50%) scale(1.05);
-    color: #2b6cb0;
+    background: #4299e1;
+    color: white;
+    border-color: #4299e1;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
 }
 
 .digital-art-prev {
