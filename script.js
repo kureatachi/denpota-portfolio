@@ -19,6 +19,11 @@ function toggleLanguage() {
     
     // Update content based on language
     updateContent();
+    
+    // Restart typing animation with new language text
+    if (window.restartTypingAnimation) {
+        window.restartTypingAnimation();
+    }
 }
 
 function updateContent() {
@@ -60,7 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const cursor = document.querySelector('.cursor');
     
     if (typingElement && cursor) {
-        const text = "ソフトウェア開発者 × マーケティングディレクター × デジタルアーティスト";
+        const japaneseText = "ソフトウェア開発者 × マーケティングディレクター × デジタルアーティスト";
+        const englishText = "Software Developer × Marketing Director × Digital Artist";
+        
+        let currentText = isEnglish ? englishText : japaneseText;
         
         // Start with empty text
         typingElement.textContent = '';
@@ -68,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let index = 0;
         
         function typeText() {
-            if (index < text.length) {
-                typingElement.textContent += text.charAt(index);
+            if (index < currentText.length) {
+                typingElement.textContent += currentText.charAt(index);
                 index++;
                 // Adjust typing speed based on screen size
                 const isMobile = window.innerWidth <= 768;
@@ -81,8 +89,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
+        // Function to restart typing animation with new text
+        function restartTypingAnimation() {
+            currentText = isEnglish ? englishText : japaneseText;
+            typingElement.textContent = '';
+            index = 0;
+            cursor.style.animation = 'none';
+            setTimeout(typeText, 100);
+        }
+        
         // Start typing animation after a short delay
         setTimeout(typeText, 1500);
+        
+        // Store the restart function globally so it can be called from toggleLanguage
+        window.restartTypingAnimation = restartTypingAnimation;
     }
 });
 
