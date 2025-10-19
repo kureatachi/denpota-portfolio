@@ -19,7 +19,13 @@ function updateContent() {
         const text = isEnglish ? 
             element.getAttribute('data-en') : 
             element.getAttribute('data-ja');
-        element.textContent = text;
+        
+        // Handle HTML content (like <strong> tags)
+        if (text && text.includes('<strong>')) {
+            element.innerHTML = text;
+        } else {
+            element.textContent = text;
+        }
         
         // Force layout recalculation for this element
         element.offsetHeight;
