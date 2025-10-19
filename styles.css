@@ -6090,6 +6090,328 @@ section {
     line-height: 1.4;
 }
 
+/* InsightHub Image Container */
+.insighthub-image-container {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.insighthub-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* InsightHub Case Study Content Styling */
+.insighthub-case-content p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500 !important;
+}
+
+.insighthub-case-content p strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.insighthub-case-content .highlight-results {
+    padding: 0.65rem 0;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    margin: 1rem 0;
+}
+
+.insighthub-case-content .highlight-results strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.insighthub-case-content .conclusion-text {
+    font-style: italic;
+    color: #718096;
+    font-weight: 400;
+}
+
+/* SugarCRM Image Container */
+.sugarcrm-image-container {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.sugarcrm-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* SugarCRM Case Study Content Styling */
+.sugarcrm-case-content p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500 !important;
+}
+
+.sugarcrm-case-content p strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.sugarcrm-case-content .highlight-results {
+    padding: 0.65rem 0;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    margin: 1rem 0;
+}
+
+.sugarcrm-case-content .highlight-results strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.sugarcrm-case-content .conclusion-text {
+    font-style: italic;
+    color: #718096;
+    font-weight: 400;
+}
+
+/* OEM Corporate CMS Image Container */
+.oem-image-container {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.oem-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* OEM Corporate CMS Case Study Content Styling */
+.oem-case-content p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500 !important;
+}
+
+.oem-case-content p strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.oem-case-content .highlight-results {
+    padding: 0.65rem 0;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    margin: 1rem 0;
+}
+
+.oem-case-content .highlight-results strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.oem-case-content .conclusion-text {
+    font-style: italic;
+    color: #718096;
+    font-weight: 400;
+}
+
+/* AI Outreach Engine Image Container */
+.ai-engine-image-container {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.ai-engine-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* AI Outreach Engine Case Study Content Styling */
+.ai-engine-case-content p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500 !important;
+}
+
+.ai-engine-case-content p strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.ai-engine-case-content .highlight-results {
+    padding: 0.65rem 0;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    margin: 1rem 0;
+}
+
+.ai-engine-case-content .highlight-results strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.ai-engine-case-content .conclusion-text {
+    font-style: italic;
+    color: #718096;
+    font-weight: 400;
+}
+
+/* Freshh Image Container */
+.freshh-image-container {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.freshh-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Freshh Case Study Content Styling */
+.freshh-case-content p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500 !important;
+}
+
+.freshh-case-content p strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.freshh-case-content .highlight-results {
+    padding: 0.65rem 0;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    margin: 1rem 0;
+}
+
+.freshh-case-content .highlight-results strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.freshh-case-content .conclusion-text {
+    font-style: italic;
+    color: #718096;
+    font-weight: 400;
+}
+
+/* InterviewX Image Container */
+.interviewx-image-container {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.interviewx-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* InterviewX Case Study Content Styling */
+.interviewx-case-content p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500 !important;
+}
+
+.interviewx-case-content p strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.interviewx-case-content .highlight-results {
+    padding: 0.5rem 0;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    margin: 0.8rem 0;
+}
+
+.interviewx-case-content .highlight-results strong {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.interviewx-case-content .conclusion-text {
+    font-style: italic;
+    color: #718096;
+    font-weight: 400;
+}
+
+/* InterviewX Modal Layout Adjustments */
+#modal3 .modal-body-left {
+    flex: 0 0 35%;
+}
+
+#modal3 .modal-body-right {
+    flex: 0 0 60%;
+    padding-left: 1.5rem;
+}
+
 /* Case Study Modal Specific Styles */
 
 
