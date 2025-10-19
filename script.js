@@ -326,50 +326,95 @@ function closeModal(modalId) {
     }
 }
 
-// Art Carousel - Simple & Reliable
+// Digital Art Carousel - 3D Style Auto-Rotation
+let currentDigitalArtIndex = 0;
+let digitalArtAutoRotate;
+
+function updateDigitalArtPositions() {
+    const slides = document.querySelectorAll('.digital-art-slide');
+    const dots = document.querySelectorAll('.digital-art-dot');
+    
+    slides.forEach((slide, index) => {
+        slide.classList.remove('left', 'center', 'right', 'hidden');
+        
+        if (index === currentDigitalArtIndex) {
+            slide.classList.add('center');
+        } else if (index === (currentDigitalArtIndex + 1) % slides.length) {
+            slide.classList.add('right');
+        } else if (index === (currentDigitalArtIndex - 1 + slides.length) % slides.length) {
+            slide.classList.add('left');
+        } else {
+            slide.classList.add('hidden');
+        }
+    });
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentDigitalArtIndex);
+    });
+}
+
+function moveDigitalArtCarousel(direction) {
+    const slides = document.querySelectorAll('.digital-art-slide');
+    currentDigitalArtIndex = (currentDigitalArtIndex + direction + slides.length) % slides.length;
+    updateDigitalArtPositions();
+}
+
+function currentDigitalArtSlide(index) {
+    currentDigitalArtIndex = index;
+    updateDigitalArtPositions();
+}
+
+function startDigitalArtAutoRotate() {
+    digitalArtAutoRotate = setInterval(() => {
+        moveDigitalArtCarousel(1);
+    }, 4000);
+}
+
+function stopDigitalArtAutoRotate() {
+    clearInterval(digitalArtAutoRotate);
+}
+
+// Initialize Digital Art Carousel
 document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.art-carousel');
-    if (!carousel) return; // Exit if no carousel on page
+    const digitalArtCarousel = document.querySelector('.digital-art-carousel-container');
+    if (!digitalArtCarousel) return;
     
-    const slides = carousel.querySelectorAll('.art-slide');
-    const prevBtn = carousel.querySelector('.art-prev');
-    const nextBtn = carousel.querySelector('.art-next');
-    const indicators = carousel.querySelectorAll('.art-indicator');
+    // Initialize positions
+    updateDigitalArtPositions();
+    startDigitalArtAutoRotate();
     
-    let currentIndex = 0;
+    // Pause on hover
+    digitalArtCarousel.addEventListener('mouseenter', stopDigitalArtAutoRotate);
+    digitalArtCarousel.addEventListener('mouseleave', startDigitalArtAutoRotate);
     
-    function showSlide(index) {
-        // Hide all slides
-        slides.forEach(slide => slide.classList.remove('show'));
-        
-        // Remove active from all indicators
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-        
-        // Show current slide
-        slides[index].classList.add('show');
-        
-        // Activate current indicator
-        indicators[index].classList.add('active');
+    // Manual navigation
+    const prevBtn = document.querySelector('.digital-art-prev');
+    const nextBtn = document.querySelector('.digital-art-next');
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            stopDigitalArtAutoRotate();
+            moveDigitalArtCarousel(-1);
+            startDigitalArtAutoRotate();
+        });
     }
     
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            stopDigitalArtAutoRotate();
+            moveDigitalArtCarousel(1);
+            startDigitalArtAutoRotate();
+        });
     }
     
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
-    }
-    
-    // Event listeners
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            currentIndex = index;
-            showSlide(currentIndex);
+    // Dot navigation
+    const dots = document.querySelectorAll('.digital-art-dot');
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopDigitalArtAutoRotate();
+            currentDigitalArtSlide(index);
+            startDigitalArtAutoRotate();
         });
     });
 });
