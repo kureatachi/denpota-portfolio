@@ -1,3 +1,39 @@
+// Language Toggle for About Page
+let isEnglish = false;
+
+function toggleLanguage() {
+    isEnglish = !isEnglish;
+    const toggleBtn = document.getElementById('lang-toggle');
+    
+    if (toggleBtn) {
+        toggleBtn.textContent = isEnglish ? 'JA' : 'EN';
+    }
+    
+    // Update content based on language
+    updateContent();
+}
+
+function updateContent() {
+    const elements = document.querySelectorAll('[data-ja][data-en]');
+    elements.forEach(element => {
+        const text = isEnglish ? 
+            element.getAttribute('data-en') : 
+            element.getAttribute('data-ja');
+        element.textContent = text;
+        
+        // Force layout recalculation for this element
+        element.offsetHeight;
+    });
+}
+
+// Initialize language toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('lang-toggle');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', toggleLanguage);
+    }
+});
+
 // Typing Animation
 document.addEventListener('DOMContentLoaded', function() {
     const typingElement = document.getElementById('typing-text');

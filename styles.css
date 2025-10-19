@@ -63,6 +63,24 @@ body {
 .nav-menu {
     display: flex;
     gap: 2rem;
+    align-items: center;
+}
+
+/* Language Toggle Button */
+.lang-btn {
+    background: #4299e1;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: #3182ce;
 }
 
 .nav-link {
