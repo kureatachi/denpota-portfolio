@@ -45,6 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleBtn = document.getElementById('lang-toggle');
     if (toggleBtn) {
         toggleBtn.addEventListener('click', toggleLanguage);
+        
+        // Initialize page in Japanese mode (default)
+        isEnglish = false;
+        toggleBtn.classList.remove('english', 'japanese');
+        toggleBtn.classList.add('japanese');
+        updateContent();
     }
 });
 
