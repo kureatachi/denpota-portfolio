@@ -3350,7 +3350,7 @@ section {
 
 /* Uniform minimum heights for all cards - same as InsightHub */
 .work-item:nth-child(1) .work-image {
-    min-height: 350px; /* Large card gets bigger image */
+    min-height: 180px !important; /* Much smaller height for Velobank */
 }
 
 .work-item:nth-child(2) .work-image {
@@ -6093,7 +6093,7 @@ section {
 /* InsightHub Image Container */
 .insighthub-image-container {
     width: 100%;
-    height: 320px;
+    height: 280px; /* Adjusted height */
     overflow: hidden;
     border-radius: 12px;
     background: #f8fafc;
@@ -6112,9 +6112,9 @@ section {
 
 /* InsightHub Case Study Content Styling */
 .insighthub-case-content p {
-    font-size: 0.85rem;
-    line-height: 1.65;
-    margin-bottom: 1rem;
+    font-size: 0.8rem; /* Adjusted font size */
+    line-height: 1.6; /* Adjusted line height */
+    margin-bottom: 0.8rem; /* Adjusted margin */
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 500 !important;
 }
@@ -6125,10 +6125,10 @@ section {
 }
 
 .insighthub-case-content .highlight-results {
-    padding: 0.65rem 0;
+    padding: 0.5rem 0; /* Adjusted padding */
     border-top: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
-    margin: 1rem 0;
+    margin: 0.8rem 0; /* Adjusted margin */
 }
 
 .insighthub-case-content .highlight-results strong {
@@ -6140,6 +6140,16 @@ section {
     font-style: italic;
     color: #718096;
     font-weight: 400;
+}
+
+/* InsightHub Modal Layout Adjustments */
+#modal4 .modal-body-left {
+    flex: 0 0 35%; /* Adjusted width */
+}
+
+#modal4 .modal-body-right {
+    flex: 0 0 60%; /* Adjusted width */
+    padding-left: 1.5rem;
 }
 
 /* SugarCRM Image Container */
@@ -6249,7 +6259,7 @@ section {
 /* AI Outreach Engine Image Container */
 .ai-engine-image-container {
     width: 100%;
-    height: 320px;
+    height: 280px; /* Adjusted height */
     overflow: hidden;
     border-radius: 12px;
     background: #f8fafc;
@@ -6268,9 +6278,9 @@ section {
 
 /* AI Outreach Engine Case Study Content Styling */
 .ai-engine-case-content p {
-    font-size: 0.85rem;
-    line-height: 1.65;
-    margin-bottom: 1rem;
+    font-size: 0.8rem; /* Adjusted font size */
+    line-height: 1.6; /* Adjusted line height */
+    margin-bottom: 0.8rem; /* Adjusted margin */
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 500 !important;
 }
@@ -6281,10 +6291,10 @@ section {
 }
 
 .ai-engine-case-content .highlight-results {
-    padding: 0.65rem 0;
+    padding: 0.5rem 0; /* Adjusted padding */
     border-top: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
-    margin: 1rem 0;
+    margin: 0.8rem 0; /* Adjusted margin */
 }
 
 .ai-engine-case-content .highlight-results strong {
@@ -6296,6 +6306,16 @@ section {
     font-style: italic;
     color: #718096;
     font-weight: 400;
+}
+
+/* AI Outreach Engine Modal Layout Adjustments */
+#modal1 .modal-body-left {
+    flex: 0 0 35%; /* Adjusted width */
+}
+
+#modal1 .modal-body-right {
+    flex: 0 0 60%; /* Adjusted width */
+    padding-left: 1.5rem;
 }
 
 /* Freshh Image Container */
