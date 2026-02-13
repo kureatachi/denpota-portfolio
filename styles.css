@@ -9034,41 +9034,26 @@ section {
     /* Opening Video Showcase Section */
 
 .video-showcase {
-
     padding: 0;
-
     background: #000;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
+    width: 100%;
 }
 
 .video-showcase .container {
-
     max-width: 100%;
-
     padding: 0;
-
     width: 100%;
-
 }
 
 .showcase-video {
-
     width: 100%;
-
-    max-height: 80vh;
-
+    max-height: 100vh;  /* 80vh → 100vh に変更してより大きく */
     display: block;
-
-    object-fit: contain;
-
+    object-fit: cover;  /* contain → cover に変更して画面いっぱいに */
     background: #000;
-
 }
 
 
