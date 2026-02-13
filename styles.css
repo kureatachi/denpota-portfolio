@@ -9034,8 +9034,7 @@ section {
     /* Opening Video Showcase Section */
 
 .video-showcase {
-    padding: 0;
-    background: #000;
+    padding: 2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9043,18 +9042,22 @@ section {
 }
 
 .video-showcase .container {
-    max-width: 100%;
-    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     width: 100%;
 }
 
 .showcase-video {
     width: 100%;
-    max-height: 100vh;  /* 80vh → 100vh に変更してより大きく */
+    max-height: 80vh;
     display: block;
-    object-fit: cover;  /* contain → cover に変更して画面いっぱいに */
+    object-fit: cover;
     background: #000;
+    border-radius: 16px;
+    overflow: hidden;
 }
+
 
 
     
